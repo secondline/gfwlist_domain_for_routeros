@@ -19,7 +19,7 @@ script:
 - sed -i '2 i/ip dns static' ./output/gfwlist_domain.rsc
 - DATE_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 - cd /tmp/
-- git clone https://${GIT_USER}:${TOKEN}@github.com/${GIT_USER}/${REPO}.git --branch gh-pages --single-branch gh-pages > /dev/null 2>&1 || exit 1
+- git clone https://${GIT_USER}:${TOKEN}@github.com/${GIT_USER}/${REPO}.git --branch gh-pages --single-branch gh-pages
 - cd gh-pages || exit 1
 - git config user.name "secondline"
 - git config user.email "secondline@hotmail.com"
