@@ -5,7 +5,7 @@ notifications:
 email: false
 env:
 global:
-- REPO=tool
+- REPO=gfwlist_domain_for_routeros
 before_script:
 - export TZ=Asia/Shanghai
 script:
