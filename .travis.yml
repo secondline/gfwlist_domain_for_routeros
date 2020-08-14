@@ -4,8 +4,6 @@ sudo: false
 notifications:
 email: false
 env:
-global:
-- REPO=gfwlist_domain_for_routeros
 before_script:
 - export TZ=Asia/Shanghai
 script:
@@ -21,7 +19,7 @@ script:
 - sed -i '2 i/ip dns static' ./output/gfwlist_domain.rsc
 - DATE_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 - cd /tmp/
-- git clone https://github.com/${GIT_USER}/${REPO}.git --branch gh-pages
+- git clone https://${GIT_USER}:${TOKEN}@github.com/${GIT_USER}/${REPO}.git --branch gh-pages --single-branch gh-pages > /dev/null 2>&1 || exit 1
 - cd gh-pages || exit 1
 - git config user.name "secondline"
 - git config user.email "secondline@hotmail.com"
