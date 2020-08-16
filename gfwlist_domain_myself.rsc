@@ -4,3 +4,4 @@
 add regexp="(\\.|^)xklxsw\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)ovpn\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)ovpn\\.net\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
+add regexp="(\\.|^)v2fly\\.org\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
