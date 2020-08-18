@@ -8,3 +8,4 @@ add regexp="(\\.|^)v2fly\\.org\$" type=FWD forward-to=$gfwdns comment="GFWListDo
 add regexp="(\\.|^)wago\\.io\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)curseforge\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)who\\.is\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
+add regexp="(\\.|^)wizcase\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
