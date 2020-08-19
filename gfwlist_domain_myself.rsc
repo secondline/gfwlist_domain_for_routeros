@@ -9,3 +9,5 @@ add regexp="(\\.|^)wago\\.io\$" type=FWD forward-to=$gfwdns comment="GFWListDoma
 add regexp="(\\.|^)curseforge\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)who\\.is\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)wizcase\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
+add regexp="(\\.|^)githubassets\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
+add regexp="(\\.|^)githubapp\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
