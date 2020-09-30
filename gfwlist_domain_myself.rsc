@@ -13,3 +13,4 @@ add regexp="(\\.|^)githubassets\\.com\$" type=FWD forward-to=$gfwdns comment="GF
 add regexp="(\\.|^)githubapp\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)synology\\.me\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)worldometers\\.info\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
+add regexp="(\\.|^)codeproject\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
