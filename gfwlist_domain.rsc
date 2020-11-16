@@ -3687,6 +3687,7 @@ add regexp="(\\.|^)paper\\.li\$" type=FWD forward-to=$gfwdns comment="GFWListDom
 add regexp="(\\.|^)paradisehill\\.cc\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)paradisepoker\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)parkansky\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
+add regexp="(\\.|^)parler\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)parsevideo\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)partycasino\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)partypoker\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
