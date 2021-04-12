@@ -14,3 +14,5 @@ add regexp="(\\.|^)synology\\.me\$" type=FWD forward-to=$gfwdns comment="GFWList
 add regexp="(\\.|^)worldometers\\.info\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)codeproject\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)sehuatang\\.net\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
+add regexp="(\\.|^)9wm9\\.cc\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
+add regexp="(\\.|^)\\.cc\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
