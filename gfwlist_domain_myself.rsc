@@ -18,3 +18,4 @@ add regexp="(\\.|^)nvidia\\.cn\$" type=FWD forward-to=$gfwdns comment="GFWListDo
 add regexp="(\\.|^)sehuatang\\.net\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)9wm9\\.cc\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)\\.cc\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
+add regexp="(\\.|^)et8\\.net\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
