@@ -3493,6 +3493,7 @@ add regexp="(\\.|^)my\\.opera\\.com\$" type=FWD forward-to=$gfwdns comment="GFWL
 add regexp="(\\.|^)myparagliding\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)my\\.pcloud\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)mypicture\\.info\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
+add regexp="(\\.|^)mypikpak\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)mypop3\\.net\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)mypop3\\.org\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)mypopescu\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
