@@ -1,4 +1,4 @@
-/ip firewall address-list remove [/ip firewall address-list find comment="NoVPN-IP-List"]
+/ip firewall address-list remove [/ip firewall address-list find comment~"NoVPN-IP-List"]
 /ip firewall address-list
 add address=1.0.1.0/24 disabled=no list=LIST_NOVPN comment="NoVPN-IP-List"
 add address=1.0.2.0/23 disabled=no list=LIST_NOVPN comment="NoVPN-IP-List"
@@ -8619,7 +8619,7 @@ add address=223.254.0.0/16 disabled=no list=LIST_NOVPN comment="NoVPN-IP-List"
 add address=223.255.0.0/17 disabled=no list=LIST_NOVPN comment="NoVPN-IP-List"
 add address=223.255.236.0/22 disabled=no list=LIST_NOVPN comment="NoVPN-IP-List"
 add address=223.255.252.0/23 disabled=no list=LIST_NOVPN comment="NoVPN-IP-List"
-add address=17.0.0.0/8 disabled=no list=LIST_NOVPN comment="NoVPN-IP-List"
-add address=10.0.0.0/8 disabled=no list=LIST_NOVPN comment="NoVPN-IP-List"
-add address=192.168.0.0/16 disabled=no list=LIST_NOVPN comment="NoVPN-IP-List"
-add address=172.16.0.0/12 disabled=no list=LIST_NOVPN comment="NoVPN-IP-List"
+add address=17.0.0.0/8 disabled=no list=LIST_NOVPN comment="NoVPN-IP-List:apple-ip"
+add address=10.0.0.0/8 disabled=no list=LIST_NOVPN comment="NoVPN-IP-List:Private-ip"
+add address=192.168.0.0/16 disabled=no list=LIST_NOVPN comment="NoVPN-IP-List:Private-ip"
+add address=172.16.0.0/12 disabled=no list=LIST_NOVPN comment="NoVPN-IP-List:Private-ip"
