@@ -1357,6 +1357,7 @@ add regexp="(\\.|^)dlsite\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListD
 add regexp="(\\.|^)dlyoutube\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)dm530\\.net\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)dmcdn\\.net\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
+add regexp="(\\.|^)dmc\\.nico\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)dmhy\\.org\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)dmm\\.co\\.jp\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)dns04\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
