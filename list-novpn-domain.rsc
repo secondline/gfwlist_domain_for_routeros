@@ -6,3 +6,6 @@ add address=portal.azure.com disabled=no list=LIST_NOVPN comment="NoVPN-Domain-L
 add address=outlook.live.com disabled=no list=LIST_NOVPN comment="NoVPN-Domain-List"
 add address=nvidia.com disabled=no list=LIST_NOVPN comment="NoVPN-Domain-List"
 add address=nvidia.cn disabled=no list=LIST_NOVPN comment="NoVPN-Domain-List"
+add address=download.nvidia.com disabled=no list=LIST_NOVPN comment="NoVPN-Domain-List"
+add address=us.download.nvidia.com disabled=no list=LIST_NOVPN comment="NoVPN-Domain-List"
+add address=cn.download.nvidia.com disabled=no list=LIST_NOVPN comment="NoVPN-Domain-List"
