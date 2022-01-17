@@ -17,5 +17,4 @@ add regexp="(\\.|^)sehuatang\\.net\$" type=FWD forward-to=$gfwdns comment="GFWLi
 add regexp="(\\.|^)9wm9\\.cc\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)\\.cc\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)quickconnect\\.to\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
-add regexp="(\\.|^)dwnews\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)ftchinese\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
