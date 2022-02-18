@@ -108,6 +108,7 @@ add regexp="(\\.|^)6parker\\.com\$" type=FWD forward-to=$gfwdns comment="GFWList
 add regexp="(\\.|^)6parknews\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)7capture\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)7cow\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
+add regexp="(\\.|^)7-zip\\.org\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)85cc\\.net\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)85cc\\.us\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)85st\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
