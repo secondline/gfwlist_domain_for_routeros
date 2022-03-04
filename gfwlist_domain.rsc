@@ -3787,6 +3787,7 @@ add regexp="(\\.|^)okayfreedom\\.com\$" type=FWD forward-to=$gfwdns comment="GFW
 add regexp="(\\.|^)okex\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)okk\\.tw\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)ok\\.ru\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
+add regexp="(\\.|^)okx\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)old-cat\\.net\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)old\\.honeynet\\.org\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)old\\.nabble\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
