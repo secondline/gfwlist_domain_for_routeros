@@ -1,7 +1,6 @@
-:local gfwdns 1.1.1.1
+add regexp="(\\.|^)000webhost\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 /ip dns static remove [/ip dns static find comment="GFWListDomain"]
 /ip dns static
-add regexp="(\\.|^)000webhost\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)030buy\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)0rz\\.tw\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
 add regexp="(\\.|^)1000giri\\.net\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
