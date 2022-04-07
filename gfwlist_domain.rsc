@@ -1,3 +1,4 @@
+:global gfwdns
 /ip dns static remove [/ip dns static find comment="GFWListDomain"]
 /ip dns static
 add regexp="(\\.|^)000webhost\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"
