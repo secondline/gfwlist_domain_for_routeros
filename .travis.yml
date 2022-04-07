@@ -15,7 +15,7 @@ script:
 - sed -i 's/\./\\\\./g' ./output/gfwlist_domain.rsc
 - sed -i 's/^/add regexp="(\\\\.|^)&/g' ./output/gfwlist_domain.rsc
 - sed -i 's/$/&\\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"/g' ./output/gfwlist_domain.rsc
-- sed -i '1 i:local gfwdns 1.1.1.1' ./output/gfwlist_domain.rsc
+#- sed -i '1 i:local gfwdns 1.1.1.1' ./output/gfwlist_domain.rsc
 - sed -i '2 i/ip dns static remove [/ip dns static find comment="GFWListDomain"]' ./output/gfwlist_domain.rsc
 - sed -i '3 i/ip dns static' ./output/gfwlist_domain.rsc
 - DATE_TIME=$(date "+%Y-%m-%d %H:%M:%S")
