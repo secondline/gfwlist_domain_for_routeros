@@ -24,6 +24,7 @@ script:
 - cd gh-pages || exit 1
 - git config user.name "secondline"
 - git config user.email "secondline@hotmail.com"
+- git rm gfwlist_domain.rsc
 - cp $TRAVIS_BUILD_DIR/output/* .
 - git add -A
 - git commit -a -m "Configuration Files Generated on [$DATE_TIME]"
