@@ -18,3 +18,8 @@ add regexp="(\\.|^)sehuatang\\.net\$" type=FWD forward-to=$gfwdns comment="GFWLi
 add regexp="(\\.|^)9wm9\\.cc\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)\\.cc\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(\\.|^)quickconnect\\.to\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
+
+/ip dns static remove [/ip dns static find comment="Blocked_Domain"]
+/ip dns static
+add name="browser.events.data.msn.com" type=A Address="127.0.0.1" comment="Blocked_Domain"
+add name="browser.events.data.msn.com.cn" type=A Address="127.0.0.1" comment="Blocked_Domain"
