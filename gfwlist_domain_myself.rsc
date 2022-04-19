@@ -22,8 +22,7 @@ add regexp="(^|(.*\\.))quickconnect\\.to\$" type=FWD forward-to=$gfwdns comment=
 /ip dns static remove [/ip dns static find comment="Blocked_Domain"]
 /ip dns static
 # 屏蔽Microsoft Edge
-#add name="pipe.aria.microsoft.com" address=127.0.0.1 type=A comment="Blocked_Domain"
-#add name="pipe.aria.microsoft.com.cn" address=127.0.0.1 type=A comment="Blocked_Domain"
+add name="pipe.aria.microsoft.com" address=127.0.0.1 type=A comment="Blocked_Domain"
 add name="ntp.msn.com" address=127.0.0.1 type=A comment="Blocked_Domain"
 add name="ntp.msn.com.cn" address=127.0.0.1 type=A comment="Blocked_Domain"
 #add name="web.vortex.data.microsoft.com" address=127.0.0.1 type=A comment="Blocked_Domain"
