@@ -13,7 +13,7 @@ script:
 - chmod +x ./tmp/gfwlist2dnsmasq.sh
 - ./tmp/gfwlist2dnsmasq.sh -l -o ./output/gfwlist_domain.rsc
 - sed -i 's/\./\\\\./g' ./output/gfwlist_domain.rsc
-- sed -i 's/^/add regexp="((.*\\\\.)|^)&/g' ./output/gfwlist_domain.rsc
+- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/gfwlist_domain.rsc
 - sed -i 's/$/&\\$" type=FWD forward-to=$gfwdns comment="GFWListDomain"/g' ./output/gfwlist_domain.rsc
 - sed -i '1 i:global gfwdns' ./output/gfwlist_domain.rsc
 - sed -i '2 i/ip dns static remove [/ip dns static find comment="GFWListDomain"]' ./output/gfwlist_domain.rsc
