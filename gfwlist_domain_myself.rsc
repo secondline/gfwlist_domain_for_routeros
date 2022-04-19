@@ -16,7 +16,7 @@ add regexp="(^|(.*\.))worldometers\\.info\$" type=FWD forward-to=$gfwdns comment
 add regexp="(^|(.*\.))codeproject\\.com\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(^|(.*\.))sehuatang\\.net\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(^|(.*\.))9wm9\\.cc\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
-add regexp="(^|(.*\.))\\.cc\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
+add regexp=".*\\.cc\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 add regexp="(^|(.*\.))quickconnect\\.to\$" type=FWD forward-to=$gfwdns comment="GFWListDomainMyself"
 
 /ip dns static remove [/ip dns static find comment="Blocked_Domain"]
