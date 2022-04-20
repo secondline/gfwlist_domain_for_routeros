@@ -1,6 +1,6 @@
-:global dns_CN
+:global dnsCN
 
 /ip dns static remove [/ip dns static find comment="CNListDomainMyself"]
 /ip dns static
 
-add regexp=".*\\.cn\$" type=FWD forward-to=$dns_CN comment="CNListDomainMyself"
+add regexp=".*\\.cn\$" type=FWD forward-to=$dnsCN comment="CNListDomainMyself"
