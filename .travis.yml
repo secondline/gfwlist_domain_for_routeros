@@ -14,8 +14,8 @@ script:
 - ./tmp/gfwlist2dnsmasq.sh -l -o ./output/dns_gfwlist_domain.rsc
 - sed -i 's/\./\\\\./g' ./output/dns_gfwlist_domain.rsc
 - sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_gfwlist_domain.rsc
-- sed -i 's/$/&\\$" type=FWD forward-to=$dns_GFW comment="GFWListDomain"/g' ./output/dns_gfwlist_domain.rsc
-- sed -i '1 i:global dns_GFW' ./output/dns_gfwlist_domain.rsc
+- sed -i 's/$/&\\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain"/g' ./output/dns_gfwlist_domain.rsc
+- sed -i '1 i:global dnsGFW' ./output/dns_gfwlist_domain.rsc
 - sed -i '2 i/ip dns static remove [/ip dns static find comment="GFWListDomain"]' ./output/dns_gfwlist_domain.rsc
 - sed -i '3 i/ip dns static' ./output/dns_gfwlist_domain.rsc
 - DATE_TIME=$(date "+%Y-%m-%d %H:%M:%S")
