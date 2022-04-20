@@ -1,5 +1,4 @@
 :global dns_GFW
-:global dns_CN
 
 /ip dns static remove [/ip dns static find comment="GFWListDomainMyself"]
 /ip dns static
