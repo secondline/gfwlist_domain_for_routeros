@@ -26,7 +26,8 @@ script:
 - git config user.name "secondline"
 - git config user.email "secondline@hotmail.com"
 - git rm dns_gfwlist_domain.rsc
-- git commit -m "Remove dns_gfwlist_domain.rsc"
+- git rm dnsmasq_gfwlist.conf
+- git commit -m "Remove dns_gfwlist_domain.rsc && dnsmasq_gfwlist.conf"
 - cp $TRAVIS_BUILD_DIR/output/* .
 - git add -A
 - git commit -a -m "Configuration Files Generated on [$DATE_TIME]"
