@@ -11,7 +11,8 @@ script:
 - mkdir -p $TRAVIS_BUILD_DIR/tmp
 - wget -N --no-check-certificate -O ./tmp/gfwlist2dnsmasq.sh https://raw.githubusercontent.com/cokebar/gfwlist2dnsmasq/master/gfwlist2dnsmasq.sh
 - chmod +x ./tmp/gfwlist2dnsmasq.sh
-- ./tmp/gfwlist2dnsmasq.sh -d 192.168.20.1 -p 53 -l -o ./output/dnsmasq_gfwlist.conf
+- ./tmp/gfwlist2dnsmasq.sh -d 192.168.20.1 -p 53 -o ./output/dnsmasq_gfwlist_192.168.20.1.conf
+- ./tmp/gfwlist2dnsmasq.sh -d 192.168.17.1 -p 53 -o ./output/dnsmasq_gfwlist_192.168.17.1.conf
 - ./tmp/gfwlist2dnsmasq.sh -l -o ./output/dns_gfwlist_domain.rsc
 - sed -i 's/\./\\\\./g' ./output/dns_gfwlist_domain.rsc
 - sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_gfwlist_domain.rsc
@@ -26,7 +27,8 @@ script:
 - git config user.name "secondline"
 - git config user.email "secondline@hotmail.com"
 - git rm dns_gfwlist_domain.rsc
-- git rm dnsmasq_gfwlist.conf
+- git rm dnsmasq_gfwlist_192.168.20.1.conf
+- git rm dnsmasq_gfwlist_192.168.17.1.conf
 - git commit -m "Remove dns_gfwlist_domain.rsc && dnsmasq_gfwlist.conf"
 - cp $TRAVIS_BUILD_DIR/output/* .
 - git add -A
