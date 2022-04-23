@@ -11,8 +11,8 @@ script:
 - mkdir -p $TRAVIS_BUILD_DIR/tmp
 # dnsmasq-china-list
 - wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_accelerated-domains.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
-- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_bogus-nxdomain.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/bogus-nxdomain.china.conf
 - wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_apple.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
+#- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_bogus-nxdomain.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/bogus-nxdomain.china.conf
 
 - wget -N --no-check-certificate -O ./output/dns_whitelist_accelerated-domains.china.rsc https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
 - wget -N --no-check-certificate -O ./output/dns_whitelist_apple.china.rsc https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
@@ -30,9 +30,10 @@ script:
 - sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_whitelist_accelerated-domains.china.rsc
 - sed -i 's/$/&\\$" type=FWD forward-to=$dnsCN comment="CNListDomain"/g' ./output/dns_whitelist_accelerated-domains.china.rsc
 - sed -i '1 i:global dnsCN' ./output/dns_whitelist_accelerated-domains.china.rsc
-- sed -i '2 i/ip dns static remove [/ip dns static find comment="CNListDomain"]' ./output/dns_whitelist_accelerated-domains.china.rsc
-- sed -i '3 i/ip dns static' ./output/dns_whitelist_accelerated-domains.china.rsc
-- sed -i '3 G' ./output/dns_whitelist_accelerated-domains.china.rsc
+- sed -i '2 i/ip dns static remove [/ip dns static find comment="GFWListDomain"]' ./output/dns_whitelist_accelerated-domains.china.rsc
+- sed -i '3 i/ip dns static remove [/ip dns static find comment="CNListDomain"]' ./output/dns_whitelist_accelerated-domains.china.rsc
+- sed -i '4 i/ip dns static' ./output/dns_whitelist_accelerated-domains.china.rsc
+- sed -i '4 G' ./output/dns_whitelist_accelerated-domains.china.rsc
 
 - sed -i 's#server=/##g' ./output/dns_whitelist_apple.china.rsc
 - sed -i 's#/114.114.114.114##g' ./output/dns_whitelist_apple.china.rsc
