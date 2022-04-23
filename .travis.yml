@@ -55,8 +55,9 @@ script:
 - sed -i 's/$/&\\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain"/g' ./output/dns_gfwlist_domain.rsc
 - sed -i '1 i:global dnsGFW' ./output/dns_gfwlist_domain.rsc
 - sed -i '2 i/ip dns static remove [/ip dns static find comment="GFWListDomain"]' ./output/dns_gfwlist_domain.rsc
-- sed -i '3 i/ip dns static' ./output/dns_gfwlist_domain.rsc
-- sed -i '3 G' ./output/dns_gfwlist_domain.rsc
+- sed -i '3 i/ip dns static remove [/ip dns static find comment="CNListDomain"]' ./output/dns_gfwlist_domain.rsc
+- sed -i '4 i/ip dns static' ./output/dns_gfwlist_domain.rsc
+- sed -i '4 G' ./output/dns_gfwlist_domain.rsc
 
 - DATE_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 - cd /tmp/
