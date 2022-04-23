@@ -26,6 +26,8 @@ script:
 # 这时如果abc中包含“/”就可以随便替换了
 - sed -i 's#server=/##g' ./output/dns_whitelist_domains.china.rsc
 - sed -i 's#/114.114.114.114##g' ./output/dns_whitelist_domains.china.rsc
+# 删除 dns_whitelist_domains.china.rsc 所有包含 # 的行
+- sed '/#/d' ./output/dns_whitelist_domains.china.rsc
 - sed -i 's/\./\\\\./g' ./output/dns_whitelist_domains.china.rsc
 - sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_whitelist_domains.china.rsc
 - sed -i 's/$/&\\$" type=FWD forward-to=$dnsCN comment="CNListDomain"/g' ./output/dns_whitelist_domains.china.rsc
