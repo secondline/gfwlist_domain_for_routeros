@@ -10,9 +10,9 @@ script:
 - mkdir -p $TRAVIS_BUILD_DIR/output
 - mkdir -p $TRAVIS_BUILD_DIR/tmp
 # dnsmasq-china-list
-- wget -N --no-check-certificate -O ./out/dnsmasq_accelerated-domains.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
-- wget -N --no-check-certificate -O ./out/dnsmasq_bogus-nxdomain.china.conf  https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/bogus-nxdomain.china.conf
-- wget -N --no-check-certificate -O ./out/dnsmasq_apple.china.conf  https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
+- wget -N --no-check-certificate -O ./output/dnsmasq_accelerated-domains.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
+- wget -N --no-check-certificate -O ./output/dnsmasq_bogus-nxdomain.china.conf  https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/bogus-nxdomain.china.conf
+- wget -N --no-check-certificate -O ./output/dnsmasq_apple.china.conf  https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
 # 
 - wget -N --no-check-certificate -O ./tmp/gfwlist2dnsmasq.sh https://raw.githubusercontent.com/cokebar/gfwlist2dnsmasq/master/gfwlist2dnsmasq.sh
 - chmod +x ./tmp/gfwlist2dnsmasq.sh
@@ -31,6 +31,9 @@ script:
 - cd gh-pages || exit 1
 - git config user.name "secondline"
 - git config user.email "secondline@hotmail.com"
+- git rm dnsmasq_accelerated-domains.china.conf
+- git rm dnsmasq_bogus-nxdomain.china.conf
+- git rm dnsmasq_apple.china.conf
 - git rm dns_gfwlist_domain.rsc
 - git rm dnsmasq_gfwlist_192.168.20.1.conf
 - git rm dnsmasq_gfwlist_192.168.17.1.conf
