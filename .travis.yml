@@ -13,13 +13,19 @@ script:
 - wget -N --no-check-certificate -O ./output/dnsmasq_accelerated-domains.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
 - wget -N --no-check-certificate -O ./output/dnsmasq_bogus-nxdomain.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/bogus-nxdomain.china.conf
 - wget -N --no-check-certificate -O ./output/dnsmasq_apple.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
-- wget -N --no-check-certificate -O ./output/dns_accelerated-domains.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
-- wget -N --no-check-certificate -O ./output/dns_bogus-nxdomain.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/bogus-nxdomain.china.conf
-- wget -N --no-check-certificate -O ./output/dns_apple.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
+
+- wget -N --no-check-certificate -O ./output/dns_accelerated-domains.china.rsc https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
+- wget -N --no-check-certificate -O ./output/dns_apple.china.rsc https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
 # sed 可以用行为单位进行部分数据的查找与替换
 # sed 's/要被取代的字串/新的字串/g'
 - sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_accelerated-domains.china.conf
 - sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_apple.china.conf
+
+- sed -i 's/server=///g' ./output/dns_apple.china.rsc
+- sed -i 's//114.114.114.114//g' ./output/dns_apple.china.rsc
+- sed -i 's/\./\\\\./g' ./output/dns_apple.china.rsc
+- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_apple.china.rsc
+- sed -i 's/$/&\\$" type=FWD forward-to=$dnsCN comment="GFWListDomain"/g' ./output/dns_apple.china.rsc
 # 
 - wget -N --no-check-certificate -O ./tmp/gfwlist2dnsmasq.sh https://raw.githubusercontent.com/cokebar/gfwlist2dnsmasq/master/gfwlist2dnsmasq.sh
 - chmod +x ./tmp/gfwlist2dnsmasq.sh
