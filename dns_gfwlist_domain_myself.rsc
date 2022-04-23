@@ -1,4 +1,5 @@
 :global dnsGFW
+:global dnsCN
 
 /ip dns static remove [/ip dns static find comment="GFWListDomainMyself"]
 /ip dns static
@@ -20,3 +21,7 @@ add regexp="(^|(.*\\.))sehuatang\\.net\$" type=FWD forward-to=$dnsGFW comment="G
 add regexp="(^|(.*\\.))9wm9\\.cc\$" type=FWD forward-to=$dnsGFW comment="GFWListDomainMyself"
 add regexp=".*\\.cc\$" type=FWD forward-to=$dnsGFW comment="GFWListDomainMyself"
 add regexp="(^|(.*\\.))quickconnect\\.to\$" type=FWD forward-to=$dnsGFW comment="GFWListDomainMyself"
+
+/ip dns static remove [/ip dns static find comment="CNListDomainMyself"]
+/ip dns static
+#add regexp=".*\\.cn\$" type=FWD forward-to=$dnsCN comment="CNListDomainMyself"
