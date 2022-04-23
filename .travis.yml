@@ -10,30 +10,30 @@ script:
 - mkdir -p $TRAVIS_BUILD_DIR/output
 - mkdir -p $TRAVIS_BUILD_DIR/tmp
 # dnsmasq-china-list
-- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_accelerated-domains.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
+- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_domains.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
 - wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_apple.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
 #- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_bogus-nxdomain.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/bogus-nxdomain.china.conf
 
-- wget -N --no-check-certificate -O ./output/dns_whitelist_accelerated-domains.china.rsc https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
+- wget -N --no-check-certificate -O ./output/dns_whitelist_domains.china.rsc https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
 - wget -N --no-check-certificate -O ./output/dns_whitelist_apple.china.rsc https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
 # sed 可以用行为单位进行部分数据的查找与替换 g 标识符表示全局查找替换
 # sed 's/要被取代的字串/新的字串/g'
-- sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_accelerated-domains.china.conf
+- sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_domains.china.conf
 - sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_apple.china.conf
 
 # 如果字符串中有“/”，就会发生混乱，在这个时候可以用#当做分隔符，就变成
 # sed -i "s#abc#cde#g" file
 # 这时如果abc中包含“/”就可以随便替换了
-- sed -i 's#server=/##g' ./output/dns_whitelist_accelerated-domains.china.rsc
-- sed -i 's#/114.114.114.114##g' ./output/dns_whitelist_accelerated-domains.china.rsc
-- sed -i 's/\./\\\\./g' ./output/dns_whitelist_accelerated-domains.china.rsc
-- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_whitelist_accelerated-domains.china.rsc
-- sed -i 's/$/&\\$" type=FWD forward-to=$dnsCN comment="CNListDomain"/g' ./output/dns_whitelist_accelerated-domains.china.rsc
-- sed -i '1 i:global dnsCN' ./output/dns_whitelist_accelerated-domains.china.rsc
-- sed -i '2 i/ip dns static remove [/ip dns static find comment="GFWListDomain"]' ./output/dns_whitelist_accelerated-domains.china.rsc
-- sed -i '3 i/ip dns static remove [/ip dns static find comment="CNListDomain"]' ./output/dns_whitelist_accelerated-domains.china.rsc
-- sed -i '4 i/ip dns static' ./output/dns_whitelist_accelerated-domains.china.rsc
-- sed -i '4 G' ./output/dns_whitelist_accelerated-domains.china.rsc
+- sed -i 's#server=/##g' ./output/dns_whitelist_domains.china.rsc
+- sed -i 's#/114.114.114.114##g' ./output/dns_whitelist_domains.china.rsc
+- sed -i 's/\./\\\\./g' ./output/dns_whitelist_domains.china.rsc
+- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_whitelist_domains.china.rsc
+- sed -i 's/$/&\\$" type=FWD forward-to=$dnsCN comment="CNListDomain"/g' ./output/dns_whitelist_domains.china.rsc
+- sed -i '1 i:global dnsCN' ./output/dns_whitelist_domains.china.rsc
+- sed -i '2 i/ip dns static remove [/ip dns static find comment="GFWListDomain"]' ./output/dns_whitelist_domains.china.rsc
+- sed -i '3 i/ip dns static remove [/ip dns static find comment="CNListDomain"]' ./output/dns_whitelist_domains.china.rsc
+- sed -i '4 i/ip dns static' ./output/dns_whitelist_domains.china.rsc
+- sed -i '4 G' ./output/dns_whitelist_domains.china.rsc
 
 - sed -i 's#server=/##g' ./output/dns_whitelist_apple.china.rsc
 - sed -i 's#/114.114.114.114##g' ./output/dns_whitelist_apple.china.rsc
@@ -65,10 +65,10 @@ script:
 - git config user.name "secondline"
 - git config user.email "secondline@hotmail.com"
 
-- git rm dnsmasq_whitelist_accelerated-domains.china.conf
+- git rm dnsmasq_whitelist_domains.china.conf
 - git rm dnsmasq_whitelist_bogus-nxdomain.china.conf
 - git rm dnsmasq_whitelist_apple.china.conf
-- git rm dns_whitelist_accelerated-domains.china.rsc
+- git rm dns_whitelist_domains.china.rsc
 - git rm dns_whitelist_apple.china.rsc
 
 - git rm dns_gfwlist_domain.rsc
