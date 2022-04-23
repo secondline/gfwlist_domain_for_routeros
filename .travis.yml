@@ -11,8 +11,8 @@ script:
 - mkdir -p $TRAVIS_BUILD_DIR/tmp
 # dnsmasq-china-list
 - wget -N --no-check-certificate -O ./output/dnsmasq_accelerated-domains.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
-- wget -N --no-check-certificate -O ./output/dnsmasq_bogus-nxdomain.china.conf  https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/bogus-nxdomain.china.conf
-- wget -N --no-check-certificate -O ./output/dnsmasq_apple.china.conf  https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
+- wget -N --no-check-certificate -O ./output/dnsmasq_bogus-nxdomain.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/bogus-nxdomain.china.conf
+- wget -N --no-check-certificate -O ./output/dnsmasq_apple.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
 # 
 - wget -N --no-check-certificate -O ./tmp/gfwlist2dnsmasq.sh https://raw.githubusercontent.com/cokebar/gfwlist2dnsmasq/master/gfwlist2dnsmasq.sh
 - chmod +x ./tmp/gfwlist2dnsmasq.sh
