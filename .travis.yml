@@ -32,7 +32,7 @@ script:
 - sed -i '1 i:global dnsCN' ./output/dns_whitelist_accelerated-domains.china.rsc
 - sed -i '2 i/ip dns static remove [/ip dns static find comment="CNListDomain"]' ./output/dns_whitelist_accelerated-domains.china.rsc
 - sed -i '3 i/ip dns static' ./output/dns_whitelist_accelerated-domains.china.rsc
-- sed -i '4 G' ./output/dns_whitelist_accelerated-domains.china.rsc
+- sed -i '3 G' ./output/dns_whitelist_accelerated-domains.china.rsc
 
 - sed -i 's#server=/##g' ./output/dns_whitelist_apple.china.rsc
 - sed -i 's#/114.114.114.114##g' ./output/dns_whitelist_apple.china.rsc
@@ -42,7 +42,7 @@ script:
 - sed -i '1 i:global dnsCN' ./output/dns_whitelist_apple.china.rsc
 - sed -i '2 i/ip dns static remove [/ip dns static find comment="CNListDomain"]' ./output/dns_whitelist_apple.china.rsc
 - sed -i '3 i/ip dns static' ./output/dns_whitelist_apple.china.rsc
-- sed -i '4 G' ./output/dns_whitelist_apple.china.rsc
+- sed -i '3 G' ./output/dns_whitelist_apple.china.rsc
 # 
 - wget -N --no-check-certificate -O ./tmp/gfwlist2dnsmasq.sh https://raw.githubusercontent.com/cokebar/gfwlist2dnsmasq/master/gfwlist2dnsmasq.sh
 - chmod +x ./tmp/gfwlist2dnsmasq.sh
@@ -55,7 +55,7 @@ script:
 - sed -i '1 i:global dnsGFW' ./output/dns_gfwlist_domain.rsc
 - sed -i '2 i/ip dns static remove [/ip dns static find comment="GFWListDomain"]' ./output/dns_gfwlist_domain.rsc
 - sed -i '3 i/ip dns static' ./output/dns_gfwlist_domain.rsc
-- sed -i '4 G' ./output/dns_gfwlist_domain.rsc
+- sed -i '3 G' ./output/dns_gfwlist_domain.rsc
 
 - DATE_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 - cd /tmp/
