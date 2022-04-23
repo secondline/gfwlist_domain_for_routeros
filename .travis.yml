@@ -10,7 +10,7 @@ script:
 - mkdir -p $TRAVIS_BUILD_DIR/output
 - mkdir -p $TRAVIS_BUILD_DIR/tmp
 # dnsmasq-china-list
-- wget https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/install.sh
+- wget -N --no-check-certificate -O ./tmp/install.sh https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/install.sh
 - chmod +x ./tmp/install.sh
 - ./tmp/install.sh
 # 
