@@ -39,9 +39,9 @@ script:
 - sed -i 's#/114.114.114.114##g' ./output/dns_whitelist_apple.china.rsc
 - sed -i 's/\./\\\\./g' ./output/dns_whitelist_apple.china.rsc
 - sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_whitelist_apple.china.rsc
-- sed -i 's/$/&\\$" type=FWD forward-to=$dnsCN comment="CNListDomain"/g' ./output/dns_whitelist_apple.china.rsc
+- sed -i 's/$/&\\$" type=FWD forward-to=$dnsCN comment="CNListDomain:Apple"/g' ./output/dns_whitelist_apple.china.rsc
 - sed -i '1 i:global dnsCN' ./output/dns_whitelist_apple.china.rsc
-- sed -i '2 i/ip dns static remove [/ip dns static find comment="CNListDomain"]' ./output/dns_whitelist_apple.china.rsc
+- sed -i '2 i/ip dns static remove [/ip dns static find comment="CNListDomain:Apple"]' ./output/dns_whitelist_apple.china.rsc
 - sed -i '3 i/ip dns static' ./output/dns_whitelist_apple.china.rsc
 - sed -i '3 G' ./output/dns_whitelist_apple.china.rsc
 # 
@@ -67,7 +67,7 @@ script:
 - git config user.email "secondline@hotmail.com"
 
 - git rm dnsmasq_whitelist_domains.china.conf
-- git rm dnsmasq_whitelist_bogus-nxdomain.china.conf
+- #git rm dnsmasq_whitelist_bogus-nxdomain.china.conf
 - git rm dnsmasq_whitelist_apple.china.conf
 - git rm dns_whitelist_domains.china.rsc
 - git rm dns_whitelist_apple.china.rsc
