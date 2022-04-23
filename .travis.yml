@@ -1,4 +1,4 @@
-#filename:.travis.yml
+# filename:.travis.yml
 dist: bionic
 sudo: false
 notifications:
@@ -9,6 +9,11 @@ before_script:
 script:
 - mkdir -p $TRAVIS_BUILD_DIR/output
 - mkdir -p $TRAVIS_BUILD_DIR/tmp
+# dnsmasq-china-list
+- wget https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/install.sh
+- chmod +x ./tmp/install.sh
+- ./tmp/install.sh
+# 
 - wget -N --no-check-certificate -O ./tmp/gfwlist2dnsmasq.sh https://raw.githubusercontent.com/cokebar/gfwlist2dnsmasq/master/gfwlist2dnsmasq.sh
 - chmod +x ./tmp/gfwlist2dnsmasq.sh
 - ./tmp/gfwlist2dnsmasq.sh -d 192.168.20.1 -p 53 -o ./output/dnsmasq_gfwlist_192.168.20.1.conf
