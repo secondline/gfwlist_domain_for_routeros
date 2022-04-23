@@ -19,7 +19,7 @@ script:
 - sed -i '2 G' ./output/IPList-v4-novpn.rsc
 
 # dnsmasq-china-list
-- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_domains.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
+- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_domain.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
 - wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_apple.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
 #- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_bogus-nxdomain.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/bogus-nxdomain.china.conf
 
@@ -27,7 +27,7 @@ script:
 - wget -N --no-check-certificate -O ./output/dns_whitelist_apple.china.rsc https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
 # sed 可以用行为单位进行部分数据的查找与替换 g 标识符表示全局查找替换
 # sed 's/要被取代的字串/新的字串/g'
-- sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_domains.china.conf
+- sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_domain.china.conf
 - sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_apple.china.conf
 
 # 如果字符串中有“/”，就会发生混乱，在这个时候可以用#当做分隔符，就变成
@@ -79,7 +79,7 @@ script:
 - git config user.name "secondline"
 - git config user.email "secondline@hotmail.com"
 
-- git rm dnsmasq_whitelist_domains.china.conf
+- git rm dnsmasq_whitelist_domain.china.conf
 - #git rm dnsmasq_whitelist_bogus-nxdomain.china.conf
 - git rm dnsmasq_whitelist_apple.china.conf
 - git rm dns_whitelist_domains.china.rsc
