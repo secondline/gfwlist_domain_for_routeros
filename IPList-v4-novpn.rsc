@@ -1,4 +1,4 @@
-/ip firewall address-list remove [/ip firewall address-list find comment~"NoVPN-IPv4-List"]
+/ip firewall address-list remove [/ip firewall address-list find comment="NoVPN-IPv4-List"]
 /ip firewall address-list
 
 add address=1.0.1.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List"
