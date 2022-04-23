@@ -39,6 +39,8 @@ script:
 
 - sed -i 's#server=/##g' ./output/dns_whitelist_apple.china.rsc
 - sed -i 's#/114.114.114.114##g' ./output/dns_whitelist_apple.china.rsc
+# 删除 dns_whitelist_apple.china.rsc 所有包含 # 的行
+- sed -i '/#/d' ./output/dns_whitelist_apple.china.rsc
 - sed -i 's/\./\\\\./g' ./output/dns_whitelist_apple.china.rsc
 - sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_whitelist_apple.china.rsc
 - sed -i 's/$/&\\$" type=FWD forward-to=$dnsCN comment="CNListDomain:Apple"/g' ./output/dns_whitelist_apple.china.rsc
