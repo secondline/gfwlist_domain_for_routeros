@@ -9,6 +9,10 @@ before_script:
 script:
 - mkdir -p $TRAVIS_BUILD_DIR/output
 - mkdir -p $TRAVIS_BUILD_DIR/tmp
+
+# IPList-v4-novpn.rsc
+- wget -O ./output/IPList-v4-novpn.rsc http://aliyun.chenby.cn/ipv4.txt
+
 # dnsmasq-china-list
 - wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_domains.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
 - wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_apple.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
