@@ -14,7 +14,7 @@ script:
 - wget -O ./output/IPList-v4-novpn.rsc http://aliyun.chenby.cn/ipv4.txt
 - sed -i 's/^/add address=/g' ./output/IPList-v4-novpn.rsc
 - sed -i 's/$/ disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List"/g' ./output/IPList-v4-novpn.rsc
-- sed -i '1 i/ip firewall address-list remove [/ip firewall address-list find comment~"NoVPN-IPv4-List"]' ./output/IPList-v4-novpn.rsc
+- sed -i '1 i/ip firewall address-list remove [/ip firewall address-list find comment="NoVPN-IPv4-List"]' ./output/IPList-v4-novpn.rsc
 - sed -i '2 i/ip firewall address-list' ./output/IPList-v4-novpn.rsc
 - sed -i '2 G' ./output/IPList-v4-novpn.rsc
 
