@@ -23,9 +23,9 @@ script:
 
 - sed -i 's/server=///g' ./output/dns_whitelist_apple.china.rsc
 - sed -i 's//114.114.114.114//g' ./output/dns_whitelist_apple.china.rsc
-- sed -i 's/\./\\\\./g' ./output/dns_whitelist_apple.china.rsc
-- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_whitelist_apple.china.rsc
-- sed -i 's/$/&\\$" type=FWD forward-to=$dnsCN comment="GFWListDomain"/g' ./output/dns_whitelist_apple.china.rsc
+#- sed -i 's/\./\\\\./g' ./output/dns_whitelist_apple.china.rsc
+#- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_whitelist_apple.china.rsc
+#- sed -i 's/$/&\\$" type=FWD forward-to=$dnsCN comment="GFWListDomain"/g' ./output/dns_whitelist_apple.china.rsc
 # 
 - wget -N --no-check-certificate -O ./tmp/gfwlist2dnsmasq.sh https://raw.githubusercontent.com/cokebar/gfwlist2dnsmasq/master/gfwlist2dnsmasq.sh
 - chmod +x ./tmp/gfwlist2dnsmasq.sh
@@ -44,9 +44,13 @@ script:
 - cd gh-pages || exit 1
 - git config user.name "secondline"
 - git config user.email "secondline@hotmail.com"
-- git rm dnsmasq_accelerated-domains.china.conf
-- git rm dnsmasq_bogus-nxdomain.china.conf
-- git rm dnsmasq_apple.china.conf
+
+- git rm dnsmasq_whitelist_accelerated-domains.china.conf
+- git rm dnsmasq_whitelist_bogus-nxdomain.china.conf
+- git rm dnsmasq_whitelist_apple.china.conf
+- git rm dns_whitelist_accelerated-domains.china.rsc
+- git rm dns_whitelist_apple.china.rsc
+
 - git rm dns_gfwlist_domain.rsc
 - git rm dnsmasq_gfwlist_192.168.20.1.conf
 - git rm dnsmasq_gfwlist_192.168.17.1.conf
