@@ -1,13 +1,14 @@
 # 屏蔽Microsoft Edge
 0.0.0.0 browser.events.data.msn.com
-0.0.0.0 ntp.msn.com
-0.0.0.0 ntp.msn.cn
-0.0.0.0 api.msn.com
-0.0.0.0 api.msn.cn
+#0.0.0.0 ntp.msn.com
+#0.0.0.0 ntp.msn.cn
+#0.0.0.0 api.msn.com
+#0.0.0.0 api.msn.cn
 #0.0.0.0 assets.msn.com
 #0.0.0.0 assets.msn.cn
-0.0.0.0 c.msn.com
-0.0.0.0 c.msn.cn
+#0.0.0.0 c.msn.com
+#0.0.0.0 c.msn.cn
+
 #0.0.0.0 pipe.aria.microsoft.com
 #0.0.0.0 web.vortex.data.microsoft.com
 #0.0.0.0 img-s-msn-com.akamaized.net
