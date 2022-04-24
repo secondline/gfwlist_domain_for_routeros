@@ -55,7 +55,6 @@ add address=sls.update.microsoft.com disabled=no list=LIST_IPv4_NOVPN comment="N
 add address=events.data.microsoft.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 add address=browser.events.data.microsoft.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 add address=ajax.aspnetcdn.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
-add address=amcdn.msftauth.net disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 add address=compass-ssl.microsoft.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 add address=content.lifecycle.office.net disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 add address=mem.gfx.ms disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
