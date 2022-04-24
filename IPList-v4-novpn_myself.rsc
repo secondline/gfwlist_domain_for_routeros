@@ -62,6 +62,10 @@ add address=shell.cdn.office.net disabled=no list=LIST_IPv4_NOVPN comment="NoVPN
 add address=wcpstatic.microsoft.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 add address=storage.live.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 add address=redir.update.microsoft.com.nsatc.net disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
+add address=outlook.office.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
+
+add address=windows.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
+add address=www.windows.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 # Microsoft 都不通过 VPN 连接
 
 # Edge Browser 都不通过 VPN 连接
@@ -82,6 +86,20 @@ add address=assets.msn.cn disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-L
 /ip firewall address-list
 # Apple-IP
 add address=17.0.0.0/8 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+
+# Microsoft-IP
+add address=13.107.6.152/31 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=13.107.18.10/31 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=13.107.128.0/22 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=23.103.160.0/20 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=40.96.0.0/13 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=40.104.0.0/15 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=52.96.0.0/14 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=131.253.33.215/32 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=132.245.0.0/16 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=150.171.32.0/22 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+# Microsoft-IP
+
 add address=10.0.0.0/8 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
 add address=192.168.0.0/16 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
 add address=172.16.0.0/12 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
