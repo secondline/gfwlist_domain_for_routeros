@@ -94,6 +94,7 @@ add address=17.0.0.0/8 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List
 
 # Microsoft-IP
 add address=13.107.6.152/31 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=13.107.6.171/32 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
 add address=13.107.18.10/31 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
 add address=13.107.128.0/22 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
 add address=23.103.160.0/20 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
