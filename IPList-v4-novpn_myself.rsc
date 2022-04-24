@@ -33,7 +33,6 @@ add address=outlook.live.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv
 add address=amcdn.msftauth.net disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 add address=res.cdn.office.net disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 add address=static.sharepointonline.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
-
 add address=office365.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 add address=www.office365.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 add address=outlook.office365.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
