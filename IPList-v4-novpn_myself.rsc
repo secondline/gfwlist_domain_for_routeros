@@ -28,6 +28,21 @@ add address=hosting.portal.azure.net disabled=no list=LIST_IPv4_NOVPN comment="N
 add address=afd.hosting.portal.azure.net disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 # Microsoft AZure 都不通过 VPN 连接
 
+# Microsoft hotmail 都不通过 VPN 连接
+add address=outlook.live.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
+add address=amcdn.msftauth.net disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
+add address=res.cdn.office.net disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
+add address=static.sharepointonline.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
+
+add address=office365.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
+add address=www.office365.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
+add address=outlook.office365.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
+add address=office.net disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
+add address=outlook.ms-acdc.office.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
+add address=www.ms-acdc.office.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
+add address=efz.ms-acdc.office.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
+# Microsoft hotmail 都不通过 VPN 连接
+
 # Edge Browser 都不通过 VPN 连接
 add address=ntp.msn.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 add address=ntp.msn.cn disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
