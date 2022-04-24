@@ -63,8 +63,8 @@ add address=wcpstatic.microsoft.com disabled=no list=LIST_IPv4_NOVPN comment="No
 add address=storage.live.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 add address=redir.update.microsoft.com.nsatc.net disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 add address=outlook.office.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
-
 add address=officeclient.microsoft.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
+add address=docs.microsoft.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 g.live.com
 oneclient.sfx.ms
 
