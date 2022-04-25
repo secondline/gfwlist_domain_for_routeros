@@ -72,7 +72,6 @@ add address=c.s-microsoft.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IP
 add address=windows.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 add address=www.windows.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 add address=insider.windows.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
-
 # Microsoft 都不通过 VPN 连接
 
 # Edge Browser 都不通过 VPN 连接
