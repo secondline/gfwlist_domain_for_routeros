@@ -2,8 +2,8 @@
 # 屏蔽 ntp.msn.com 将使 Edge 的空页面显示不正常
 #0.0.0.0 ntp.msn.com
 #0.0.0.0 ntp.msn.cn
-0.0.0.0 assets.msn.com
-0.0.0.0 assets.msn.cn
+#0.0.0.0 assets.msn.com
+#0.0.0.0 assets.msn.cn
 
 0.0.0.0 api.msn.com
 0.0.0.0 api.msn.cn
@@ -12,6 +12,6 @@
 0.0.0.0 browser.events.data.msn.com
 0.0.0.0 browser.events.data.msn.cn
 
-#0.0.0.0 web.vortex.data.microsoft.com
+0.0.0.0 web.vortex.data.microsoft.com
 #0.0.0.0 img-s-msn-com.akamaized.net
 # 屏蔽 Microsoft Edge
