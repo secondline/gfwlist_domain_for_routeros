@@ -21,4 +21,4 @@ add regexp="(^|(.*\\.))codeproject\\.com\$" type=FWD forward-to=$dnsGFW comment=
 add regexp="(^|(.*\\.))sehuatang\\.net\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain:Myself"
 add regexp="(^|(.*\\.))9wm9\\.cc\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain:Myself"
 add regexp=".*\\.cc\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain:Myself"
-@add regexp="(^|(.*\\.))quickconnect\\.to\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain:Myself"
+add regexp="(^|(.*\\.))quickconnect\\.to\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain:Myself"
