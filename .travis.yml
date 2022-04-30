@@ -44,8 +44,8 @@ script:
 - sed -i 's#/114.114.114.114##g' ./output/dns_whitelist_domain.china.rsc
 # 删除 dns_whitelist_domain.china.rsc 所有包含 # 的行
 - sed -i '/#/d' ./output/dns_whitelist_domain.china.rsc
-- sed -i 's/\./\\\\./g' ./output/dns_whitelist_domain.china.rsc
-- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_whitelist_domain.china.rsc
+- sed -i 's/\././g' ./output/dns_whitelist_domain.china.rsc
+- sed -i 's/^/add regexp="(^|(.*.))&/g' ./output/dns_whitelist_domain.china.rsc
 - sed -i 's/$/&\\$" type=FWD forward-to=$dnsCN comment="CNListDomain"/g' ./output/dns_whitelist_domain.china.rsc
 - sed -i '1 i:global dnsCN' ./output/dns_whitelist_domain.china.rsc
 - sed -i '2 i/ip dns static remove [/ip dns static find comment="GFWListDomain"]' ./output/dns_whitelist_domain.china.rsc
@@ -57,8 +57,8 @@ script:
 - sed -i 's#/114.114.114.114##g' ./output/dns_whitelist_apple.china.rsc
 # 删除 dns_whitelist_apple.china.rsc 所有包含 # 的行
 - sed -i '/#/d' ./output/dns_whitelist_apple.china.rsc
-- sed -i 's/\./\\\\./g' ./output/dns_whitelist_apple.china.rsc
-- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_whitelist_apple.china.rsc
+- sed -i 's/\././g' ./output/dns_whitelist_apple.china.rsc
+- sed -i 's/^/add regexp="(^|(.*.))&/g' ./output/dns_whitelist_apple.china.rsc
 - sed -i 's/$/&\\$" type=FWD forward-to=$dnsCN comment="CNListDomain:Apple"/g' ./output/dns_whitelist_apple.china.rsc
 - sed -i '1 i:global dnsCN' ./output/dns_whitelist_apple.china.rsc
 - sed -i '2 i/ip dns static remove [/ip dns static find comment="CNListDomain:Apple"]' ./output/dns_whitelist_apple.china.rsc
@@ -70,8 +70,8 @@ script:
 - ./tmp/gfwlist2dnsmasq.sh -d 192.168.20.1 -p 53 -o ./output/dnsmasq_gfwlist_192.168.20.1.conf
 - ./tmp/gfwlist2dnsmasq.sh -d 192.168.17.1 -p 53 -o ./output/dnsmasq_gfwlist_192.168.17.1.conf
 - ./tmp/gfwlist2dnsmasq.sh -l -o ./output/dns_gfwlist_domain.rsc
-- sed -i 's/\./\\\\./g' ./output/dns_gfwlist_domain.rsc
-- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_gfwlist_domain.rsc
+- sed -i 's/\././g' ./output/dns_gfwlist_domain.rsc
+- sed -i 's/^/add regexp="(^|(.*.))&/g' ./output/dns_gfwlist_domain.rsc
 - sed -i 's/$/&\\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain"/g' ./output/dns_gfwlist_domain.rsc
 - sed -i '1 i:global dnsGFW' ./output/dns_gfwlist_domain.rsc
 - sed -i '2 i/ip dns static remove [/ip dns static find comment="GFWListDomain"]' ./output/dns_gfwlist_domain.rsc
