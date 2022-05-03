@@ -3,10 +3,10 @@
 
 # 屏蔽 Microsoft Edge
 # 屏蔽 ntp.msn.com 将使 Edge 的空页面显示不正常
-#add name="ntp.msn.com" address=255.255.255.255 type=A comment="Blocked_Domain"
-#add name="ntp.msn.cn" address=255.255.255.255 type=A comment="Blocked_Domain"
-#add name="assets.msn.com" address=255.255.255.255 type=A comment="Blocked_Domain"
-#add name="assets.msn.cn" address=255.255.255.255 type=A comment="Blocked_Domain"
+add name="ntp.msn.com" address=255.255.255.255 type=A comment="Blocked_Domain"
+add name="ntp.msn.cn" address=255.255.255.255 type=A comment="Blocked_Domain"
+add name="assets.msn.com" address=255.255.255.255 type=A comment="Blocked_Domain"
+add name="assets.msn.cn" address=255.255.255.255 type=A comment="Blocked_Domain"
 
 # RouterOS 的地址不能设置为 0.0.0.0; 如果把屏蔽地址设为 127.0.0.1 有点慢
 add name="api.msn.com" address=255.255.255.255 type=A comment="Blocked_Domain"
