@@ -26,14 +26,14 @@ script:
 # sed 's/要被取代的字串/新的字串/g'
 - sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_domain.192.168.32.1.conf
 - sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_apple.192.168.32.1.conf
-# dnsmasq-china-list - 192.168.17.1
-- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_domain.192.168.17.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
-- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_apple.192.168.17.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
+# dnsmasq-china-list - 192.168.14.1
+- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_domain.192.168.14.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
+- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_apple.192.168.14.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
 #- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_bogus-nxdomain.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/bogus-nxdomain.china.conf
 # sed 可以用行为单位进行部分数据的查找与替换 g 标识符表示全局查找替换
 # sed 's/要被取代的字串/新的字串/g'
-- sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_domain.192.168.17.1.conf
-- sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_apple.192.168.17.1.conf
+- sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_domain.192.168.14.1.conf
+- sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_apple.192.168.14.1.conf
 
 - wget -N --no-check-certificate -O ./output/dns_whitelist_domain.china.rsc https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
 - wget -N --no-check-certificate -O ./output/dns_whitelist_apple.china.rsc https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
@@ -68,7 +68,7 @@ script:
 - wget -N --no-check-certificate -O ./tmp/gfwlist2dnsmasq.sh https://raw.githubusercontent.com/cokebar/gfwlist2dnsmasq/master/gfwlist2dnsmasq.sh
 - chmod +x ./tmp/gfwlist2dnsmasq.sh
 - ./tmp/gfwlist2dnsmasq.sh -d 192.168.32.1 -p 53 -o ./output/dnsmasq_gfwlist_192.168.32.1.conf
-- ./tmp/gfwlist2dnsmasq.sh -d 192.168.17.1 -p 53 -o ./output/dnsmasq_gfwlist_192.168.17.1.conf
+- ./tmp/gfwlist2dnsmasq.sh -d 192.168.14.1 -p 53 -o ./output/dnsmasq_gfwlist_192.168.14.1.conf
 - ./tmp/gfwlist2dnsmasq.sh -l -o ./output/dns_gfwlist_domain.rsc
 - sed -i 's/\./\\\\./g' ./output/dns_gfwlist_domain.rsc
 - sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_gfwlist_domain.rsc
@@ -89,8 +89,8 @@ script:
 - git rm dnsmasq_whitelist_domain.192.168.32.1.conf
 - git rm dnsmasq_whitelist_apple.192.168.32.1.conf
 
-- git rm dnsmasq_whitelist_domain.192.168.17.1.conf
-- git rm dnsmasq_whitelist_apple.192.168.17.1.conf
+- git rm dnsmasq_whitelist_domain.192.168.14.1.conf
+- git rm dnsmasq_whitelist_apple.192.168.14.1.conf
 - #git rm dnsmasq_whitelist_bogus-nxdomain.china.conf
 
 - git rm dns_whitelist_domain.china.rsc
@@ -98,7 +98,7 @@ script:
 
 - git rm dns_gfwlist_domain.rsc
 - git rm dnsmasq_gfwlist_192.168.32.1.conf
-- git rm dnsmasq_gfwlist_192.168.17.1.conf
+- git rm dnsmasq_gfwlist_192.168.14.1.conf
 - git commit -m "Remove dns_gfwlist_domain.rsc && dnsmasq_gfwlist.conf"
 - cp $TRAVIS_BUILD_DIR/output/* .
 - git add -A
