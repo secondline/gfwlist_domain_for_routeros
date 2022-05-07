@@ -95,17 +95,17 @@ add address=browser.events.data.msn.cn disabled=no list=LIST_IPv4_NOVPN comment=
 add address=17.0.0.0/8 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
 
 # Microsoft-IP
-add address=13.107.6.152/31 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
-add address=13.107.6.171/32 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
-add address=13.107.18.10/31 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
-add address=13.107.128.0/22 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
-add address=23.103.160.0/20 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
-add address=40.96.0.0/13 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
-add address=40.104.0.0/15 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
-add address=52.96.0.0/14 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
-add address=131.253.33.215/32 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
-add address=132.245.0.0/16 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
-add address=150.171.32.0/22 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+#add address=13.107.6.152/31 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+#add address=13.107.6.171/32 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+#add address=13.107.18.10/31 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+#add address=13.107.128.0/22 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+#add address=23.103.160.0/20 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+#add address=40.96.0.0/13 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+#add address=40.104.0.0/15 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+#add address=52.96.0.0/14 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+#add address=131.253.33.215/32 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+#add address=132.245.0.0/16 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+#add address=150.171.32.0/22 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
 # Microsoft-IP
 
 add address=10.0.0.0/8 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
