@@ -94,8 +94,8 @@ script:
 - git config user.name "secondline"
 - git config user.email "secondline@hotmail.com"
 
-- git rm IPList-v4-novpn.rsc
-- git rm IPList-v6-novpn.rsc
+#- git rm IPList-v4-novpn.rsc
+#- git rm IPList-v6-novpn.rsc
 
 - git rm dnsmasq_whitelist_domain.192.168.32.1.conf
 - git rm dnsmasq_whitelist_apple.192.168.32.1.conf
