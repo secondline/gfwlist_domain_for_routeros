@@ -1,5 +1,5 @@
-/ip firewall address-list remove [/ip firewall address-list find comment="NoVPN-IPv6-List"]
-/ip firewall address-list
+/ip6 firewall address-list remove [/ip6 firewall address-list find comment="NoVPN-IPv6-List"]
+/ip6 firewall address-list
 
 add address=2001:250::/30 disabled=no list=LIST_IPv6_NOVPN comment="NoVPN-IPv6-List"
 add address=2001:254::/31 disabled=no list=LIST_IPv6_NOVPN comment="NoVPN-IPv6-List"
