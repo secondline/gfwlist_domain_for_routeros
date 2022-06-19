@@ -11,12 +11,20 @@ script:
 - mkdir -p $TRAVIS_BUILD_DIR/tmp
 
 # IPList-v4-novpn.rsc
-- wget -O ./output/IPList-v4-novpn.rsc http://aliyun.chenby.cn/ipv4.txt
+- wget -O ./output/IPList-v4-novpn.rsc https://raw.githubusercontent.com/PaPerseller/chn-iplist/master/chnroute-ipv4.txt
 - sed -i 's/^/add address=/g' ./output/IPList-v4-novpn.rsc
 - sed -i 's/$/ disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List"/g' ./output/IPList-v4-novpn.rsc
 - sed -i '1 i/ip firewall address-list remove [/ip firewall address-list find comment="NoVPN-IPv4-List"]' ./output/IPList-v4-novpn.rsc
 - sed -i '2 i/ip firewall address-list' ./output/IPList-v4-novpn.rsc
 - sed -i '2 G' ./output/IPList-v4-novpn.rsc
+
+# IPList-v6-novpn.rsc
+- wget -O ./output/IPList-v6-novpn.rsc https://raw.githubusercontent.com/PaPerseller/chn-iplist/master/chnroute-ipv6.txt
+- sed -i 's/^/add address=/g' ./output/IPList-v6-novpn.rsc
+- sed -i 's/$/ disabled=no list=LIST_IPv6_NOVPN comment="NoVPN-IPv6-List"/g' ./output/IPList-v6-novpn.rsc
+- sed -i '1 i/ip firewall address-list remove [/ip firewall address-list find comment="NoVPN-IPv6-List"]' ./output/IPList-v6-novpn.rsc
+- sed -i '2 i/ip firewall address-list' ./output/IPList-v6-novpn.rsc
+- sed -i '2 G' ./output/IPList-v6-novpn.rsc
 
 # dnsmasq-china-list - 192.168.32.1
 - wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_domain.192.168.32.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
@@ -86,6 +94,9 @@ script:
 - git config user.name "secondline"
 - git config user.email "secondline@hotmail.com"
 
+- git rm IPList-v4-novpn.rsc
+- git rm IPList-v6-novpn.rsc
+
 - git rm dnsmasq_whitelist_domain.192.168.32.1.conf
 - git rm dnsmasq_whitelist_apple.192.168.32.1.conf
 
@@ -99,7 +110,8 @@ script:
 - git rm dns_gfwlist_domain.rsc
 - git rm dnsmasq_gfwlist_192.168.32.1.conf
 - git rm dnsmasq_gfwlist_192.168.14.1.conf
-- git commit -m "Remove dns_gfwlist_domain.rsc && dnsmasq_gfwlist.conf"
+- git commit -m "Remove Old IPList && DNS GFWList Configuration"
+
 - cp $TRAVIS_BUILD_DIR/output/* .
 - git add -A
 - git commit -a -m "Configuration Files Generated on [$DATE_TIME]"
