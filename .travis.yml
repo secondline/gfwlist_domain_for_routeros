@@ -22,8 +22,8 @@ script:
 - wget -O ./output/IPList-v6-novpn.rsc https://raw.githubusercontent.com/PaPerseller/chn-iplist/master/chnroute-ipv6.txt
 - sed -i 's/^/add address=/g' ./output/IPList-v6-novpn.rsc
 - sed -i 's/$/ disabled=no list=LIST_IPv6_NOVPN comment="NoVPN-IPv6-List"/g' ./output/IPList-v6-novpn.rsc
-- sed -i '1 i/ip firewall address-list remove [/ip firewall address-list find comment="NoVPN-IPv6-List"]' ./output/IPList-v6-novpn.rsc
-- sed -i '2 i/ip firewall address-list' ./output/IPList-v6-novpn.rsc
+- sed -i '1 i/ip6 firewall address-list remove [/ip6 firewall address-list find comment="NoVPN-IPv6-List"]' ./output/IPList-v6-novpn.rsc
+- sed -i '2 i/ip6 firewall address-list' ./output/IPList-v6-novpn.rsc
 - sed -i '2 G' ./output/IPList-v6-novpn.rsc
 
 # dnsmasq-china-list - 192.168.32.1
