@@ -1,7 +1,7 @@
 # 屏蔽 Microsoft Edge
 # 屏蔽 ntp.msn.com 将使 Edge 的空页面显示不正常
-address=/ntp.msn.com/#
-address=/ntp.msn.cn/#
+#address=/ntp.msn.com/#
+#address=/ntp.msn.cn/#
 address=/assets.msn.com/#
 address=/assets.msn.cn/#
 
