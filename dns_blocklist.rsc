@@ -1,3 +1,17 @@
+
+/ip dns static remove [/ip dns static find comment="CNListDomain:Cloud.Mikrotik.Com"]
+/ip dns static add regexp="cloud[0-9]?\\.mikrotik\\.com\$" type=FWD forward-to=119.29.29.29 comment="CNListDomain:Cloud.Mikrotik.Com"
+/ip dns static add regexp=".*\\.sn\\.mynetname\\.net\$" type=FWD forward-to=119.29.29.29 comment="CNListDomain:Cloud.Mikrotik.Com"
+
+/ip dns static remove [/ip dns static find comment="CNListDomain:Cloudapp.Azure.Com"]
+/ip dns static add regexp=".*\\.cloudapp\\.azure\\.com\$" type=FWD forward-to=119.29.29.29 comment="CNListDomain:Cloudapp.Azure.Com"
+
+/ip dns static remove [/ip dns static find comment="CNListDomain:Doh.DNS"]
+/ip dns static add regexp=".*\\.alidns\\.com\$" type=FWD forward-to=223.5.5.5 comment="CNListDomain:Doh.DNS"
+/ip dns static add regexp=".*\\.aliyun\\.com\$" type=FWD forward-to=223.5.5.5 comment="CNListDomain:Doh.DNS"
+/ip dns static add regexp="doh\\.pub\$" type=FWD forward-to=119.29.29.29 comment="CNListDomain:Doh.DNS"
+/ip dns static add regexp=".*\\.tencent\\.com\$" type=FWD forward-to=119.29.29.29 comment="CNListDomain:Doh.DNS"
+
 /ip dns static remove [/ip dns static find comment="Blocked_Domain"]
 /ip dns static
 
