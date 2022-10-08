@@ -3,7 +3,7 @@
 
 /ip dns static remove [/ip dns static find comment="CNListDomain:Cloud.Mikrotik.Com"]
 /ip dns static
-add regexp="cloud[0-9]?\\.mikrotik\\.com\$" type=FWD forward-to=119.29.29.29 comment="CNListDomain:Cloud.Mikrotik.Com"
+add regexp="(^|(.*\\.))cloud[0-9]?\\.mikrotik\\.com\$" type=FWD forward-to=119.29.29.29 comment="CNListDomain:Cloud.Mikrotik.Com"
 add regexp="(.*\\.)sn\\.mynetname\\.net\$" type=FWD forward-to=119.29.29.29 comment="CNListDomain:Cloud.Mikrotik.Com"
 
 /ip dns static remove [/ip dns static find comment="CNListDomain:Cloudapp.Azure.Com"]
