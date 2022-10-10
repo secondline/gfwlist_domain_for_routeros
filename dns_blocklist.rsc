@@ -3,26 +3,26 @@
 
 /ip dns static remove [/ip dns static find comment="CNListDomain:Cloud.Mikrotik.Com"]
 /ip dns static
-add regexp="(^|(.*\\.))cloud[0-9]?\\.mikrotik\\.com\$" type=FWD forward-to=119.28.28.28 comment="CNListDomain:Cloud.Mikrotik.Com"
-add regexp="(^|(.*\\.))cloud[0-9]?\\.mikrotik\\.com\$" type=FWD forward-to=114.114.114.114 comment="CNListDomain:Cloud.Mikrotik.Com"
-add regexp="(.*\\.)sn\\.mynetname\\.net\$" type=FWD forward-to=119.28.28.28 comment="CNListDomain:Cloud.Mikrotik.Com"
-add regexp="(.*\\.)sn\\.mynetname\\.net\$" type=FWD forward-to=114.114.114.114 comment="CNListDomain:Cloud.Mikrotik.Com"
+add regexp="(^|(.*\\.))cloud[0-9]?\\.mikrotik\\.com\$" type=FWD forward-to=119.29.29.29 ttl=600s comment="CNListDomain:Cloud.Mikrotik.Com"
+add regexp="(^|(.*\\.))cloud[0-9]?\\.mikrotik\\.com\$" type=FWD forward-to=223.5.5.5 ttl=600s comment="CNListDomain:Cloud.Mikrotik.Com"
+add regexp="(.*\\.)sn\\.mynetname\\.net\$" type=FWD forward-to=119.29.29.29 ttl=600s comment="CNListDomain:Cloud.Mikrotik.Com"
+add regexp="(.*\\.)sn\\.mynetname\\.net\$" type=FWD forward-to=223.5.5.5 ttl=600s comment="CNListDomain:Cloud.Mikrotik.Com"
 
 /ip dns static remove [/ip dns static find comment="CNListDomain:Cloudapp.Azure.Com"]
 /ip dns static
-add regexp="(.*\\.)cloudapp\\.azure\\.com\$" type=FWD forward-to=119.28.28.28 comment="CNListDomain:Cloudapp.Azure.Com"
-add regexp="(.*\\.)cloudapp\\.azure\\.com\$" type=FWD forward-to=114.114.114.114 comment="CNListDomain:Cloudapp.Azure.Com"
+add regexp="(.*\\.)cloudapp\\.azure\\.com\$" type=FWD forward-to=119.29.29.29 ttl=600s comment="CNListDomain:Cloudapp.Azure.Com"
+add regexp="(.*\\.)cloudapp\\.azure\\.com\$" type=FWD forward-to=223.5.5.5 ttl=600s comment="CNListDomain:Cloudapp.Azure.Com"
 
 /ip dns static remove [/ip dns static find comment="CNListDomain:Doh.DNS"]
 /ip dns static
-add regexp="(^|(.*\\.))alidns\\.com\$" type=FWD forward-to=223.6.6.6 comment="CNListDomain:Doh.DNS"
-add regexp="(^|(.*\\.))alidns\\.com\$" type=FWD forward-to=114.114.114.114 comment="CNListDomain:Doh.DNS"
-add regexp="(^|(.*\\.))aliyun\\.com\$" type=FWD forward-to=223.6.6.6 comment="CNListDomain:Doh.DNS"
-add regexp="(^|(.*\\.))aliyun\\.com\$" type=FWD forward-to=114.114.114.114 comment="CNListDomain:Doh.DNS"
-add regexp="(^|(.*\\.))doh\\.pub\$" type=FWD forward-to=119.28.28.28 comment="CNListDomain:Doh.DNS"
-add regexp="(^|(.*\\.))doh\\.pub\$" type=FWD forward-to=114.114.114.114 comment="CNListDomain:Doh.DNS"
-add regexp="(^|(.*\\.))tencent\\.com\$" type=FWD forward-to=119.28.28.28 comment="CNListDomain:Doh.DNS"
-add regexp="(^|(.*\\.))tencent\\.com\$" type=FWD forward-to=114.114.114.114 comment="CNListDomain:Doh.DNS"
+add regexp="(^|(.*\\.))alidns\\.com\$" type=FWD forward-to=223.5.5.5 ttl=600s comment="CNListDomain:Doh.DNS"
+add regexp="(^|(.*\\.))alidns\\.com\$" type=FWD forward-to=119.29.29.29 ttl=600s comment="CNListDomain:Doh.DNS"
+add regexp="(^|(.*\\.))aliyun\\.com\$" type=FWD forward-to=223.5.5.5 ttl=600s comment="CNListDomain:Doh.DNS"
+add regexp="(^|(.*\\.))aliyun\\.com\$" type=FWD forward-to=119.29.29.29 ttl=600s comment="CNListDomain:Doh.DNS"
+add regexp="(^|(.*\\.))doh\\.pub\$" type=FWD forward-to=119.29.29.29 ttl=600s comment="CNListDomain:Doh.DNS"
+add regexp="(^|(.*\\.))doh\\.pub\$" type=FWD forward-to=223.5.5.5 ttl=600s comment="CNListDomain:Doh.DNS"
+add regexp="(^|(.*\\.))tencent\\.com\$" type=FWD forward-to=119.29.29.29 ttl=600s comment="CNListDomain:Doh.DNS"
+add regexp="(^|(.*\\.))tencent\\.com\$" type=FWD forward-to=223.5.5.5 ttl=600s comment="CNListDomain:Doh.DNS"
 
 /ip dns static remove [/ip dns static find comment="Blocked_Domain"]
 /ip dns static
