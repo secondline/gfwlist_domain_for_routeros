@@ -1,4 +1,4 @@
-/ip firewall address-list remove [/ip firewall address-list find list=LIST_IPv4_LOCAL]
+/ip firewall address-list remove [/ip firewall address-list find comment="Private-IP"]
 /ip firewall address-list
 
 add address=10.0.0.0/8 disabled=no list=LIST_IPv4_LOCAL comment="Private-IP"
