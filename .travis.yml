@@ -30,8 +30,11 @@ script:
 - wget -O ./output/dns_blocklist_oisd.rsc https://dnsmasq.oisd.nl/basic/
 # 删除 dns_blocklist_oisd.rsc 所有以 # 开头的行
 - sed -i '/^#/d' ./output/dns_blocklist_oisd.rsc
+# 如果字符串中有“/”，就会发生混乱，在这个时候可以用#当做分隔符，就变成
+# sed -i "s#abc#cde#g" file
+# 这时如果abc中包含“/”就可以随便替换了
 - sed -i 's#address=/##g' ./output/dns_blocklist_oisd.rsc
-- sed -i 's#/###g' ./output/dns_blocklist_oisd.rsc
+- sed -i 's/\/\#//g' ./output/dns_blocklist_oisd.rsc
 
 # dnsmasq-china-list - 192.168.32.1
 - wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_domain.192.168.32.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
