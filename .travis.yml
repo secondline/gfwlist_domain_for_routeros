@@ -30,7 +30,7 @@ script:
 - wget -O ./output/dns_blocklist_oisd.rsc https://dnsmasq.oisd.nl/basic/
 # 删除 dns_blocklist_oisd.rsc 所有以 # 开头的行
 - sed -i '/^#/d' ./output/dns_blocklist_oisd.rsc
-- sed -i 's#server=/##g' ./output/dns_blocklist_oisd.rsc
+- sed -i 's#address=/##g' ./output/dns_blocklist_oisd.rsc
 - sed -i 's#/###g' ./output/dns_blocklist_oisd.rsc
 
 # dnsmasq-china-list - 192.168.32.1
