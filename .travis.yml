@@ -26,6 +26,13 @@ script:
 - sed -i '2 i/ipv6 firewall address-list' ./output/IPList-v6-novpn.rsc
 - sed -i '2 G' ./output/IPList-v6-novpn.rsc
 
+# Convert [OISD | Domain Blocklist] to RouterOS
+- wget -O ./output/dns_blocklist_oisd.rsc https://dnsmasq.oisd.nl/basic/
+# 删除 dns_blocklist_oisd.rsc 所有以 # 开头的行
+- sed -i '/^#/d' ./output/dns_blocklist_oisd.rsc
+- sed -i 's#server=/##g' ./output/dns_blocklist_oisd.rsc
+- sed -i 's#/###g' ./output/dns_blocklist_oisd.rsc
+
 # dnsmasq-china-list - 192.168.32.1
 - wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_domain.192.168.32.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
 - wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_apple.192.168.32.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
