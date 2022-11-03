@@ -28,8 +28,9 @@ script:
 
 # Convert [OISD | Domain Blocklist] to RouterOS
 - wget -O ./output/dns_blocklist_oisd.rsc https://dnsmasq.oisd.nl/basic/
-# 删除 dns_blocklist_oisd.rsc 所有以 # 开头的行
+# 删除 dns_blocklist_oisd.rsc 所有以 # 开头的行和空行
 - sed -i '/^#/d' ./output/dns_blocklist_oisd.rsc
+- sed -i '/^/d' ./output/dns_blocklist_oisd.rsc
 # 方法一：如果要替换字符串中的“/”，使用转义符\，“\/”
 # 方法二：如果字符串中有“/”，就会发生混乱，在这个时候可以用#当做分隔符，就变成
 # sed -i "s#abc#cde#g" file
@@ -37,11 +38,12 @@ script:
 - sed -i 's#address=/##g' ./output/dns_blocklist_oisd.rsc
 - sed -i 's/\/\#//g' ./output/dns_blocklist_oisd.rsc
 - sed -i 's/\./\\\\./g' ./output/dns_blocklist_oisd.rsc
+
 - sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_blocklist_oisd.rsc
 - sed -i 's/$/&\\$" address=240.0.0.1 type=A comment="Blocklist_OISD"/g' ./output/dns_blocklist_oisd.rsc
 - sed -i '1 i/ip dns static remove [/ip dns static find comment="Blocklist_OISD"]' ./output/dns_blocklist_oisd.rsc
 - sed -i '2 i/ip dns static' ./output/dns_blocklist_oisd.rsc
-- sed -i '3 G' ./output/dns_blocklist_oisd.rsc
+- sed -i '2 G' ./output/dns_blocklist_oisd.rsc
 
 # dnsmasq-china-list - 192.168.32.1
 - wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_domain.192.168.32.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
