@@ -66,14 +66,16 @@ script:
 # 输出 dnsmasq 的 DNS 广告过滤列表
 - sed -i 's/^/address=\//g' ./output/dnsmasq_blocklist_ad.hosts
 - sed -i 's/$/&\/\#/g' ./output/dnsmasq_blocklist_ad.hosts
+- sed -i '1 # Merge [OISD | Domain Blocklist] and [anti-AD 中文区的广告过滤列表]' ./output/dnsmasq_blocklist_ad.hosts
+- sed -i '1 G' ./output/dnsmasq_blocklist_ad.hosts
 
 # 输出 RouterOS 的 DNS 广告过滤列表
 - sed -i 's/\./\\\\./g' ./output/dns_blocklist_ad.rsc
 # 由于当前 RouterOS 不支持太过复杂的 Regexp，删除长度超过一定的行
 - sed -i '/^.\{70,\}/d' ./output/dns_blocklist_ad.rsc
 - sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_blocklist_ad.rsc
-- sed -i 's/$/&\\$" address=240.0.0.1 type=A comment="Blocklist_Anti_AD"/g' ./output/dns_blocklist_ad.rsc
-- sed -i '1 i/ip dns static remove [/ip dns static find comment="Blocklist_Anti_AD"]' ./output/dns_blocklist_ad.rsc
+- sed -i 's/$/&\\$" address=240.0.0.1 type=A comment="Blocklist_AD"/g' ./output/dns_blocklist_ad.rsc
+- sed -i '1 i/ip dns static remove [/ip dns static find comment="Blocklist_AD"]' ./output/dns_blocklist_ad.rsc
 - sed -i '2 i/ip dns static' ./output/dns_blocklist_ad.rsc
 - sed -i '2 G' ./output/dns_blocklist_ad.rsc
 
