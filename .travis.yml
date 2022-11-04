@@ -48,25 +48,25 @@ script:
 - sed -i '2 G' ./output/dns_blocklist_oisd.rsc
 
 # Convert [anti-AD 中文区的广告过滤列表] to RouterOS [https://github.com/privacy-protection-tools/anti-AD]
-- wget -O ./output/dns_blocklist_anti_ad.rsc https://anti-ad.net/anti-ad-for-dnsmasq.conf
+- wget -O ./tmp/dns_blocklist_anti_ad.rsc https://anti-ad.net/anti-ad-for-dnsmasq.conf
 # 删除 dns_blocklist_anti_ad.rsc 所有以 # 开头的行和空行
-- sed -i '/^#/d' ./output/dns_blocklist_anti_ad.rsc
-- sed -i '/^$/d' ./output/dns_blocklist_anti_ad.rsc
+- sed -i '/^#/d' ./tmp/dns_blocklist_anti_ad.rsc
+- sed -i '/^$/d' ./tmp/dns_blocklist_anti_ad.rsc
 # 方法一：如果要替换字符串中的“/”，使用转义符\，“\/”
 # 方法二：如果字符串中有“/”，就会发生混乱，在这个时候可以用#当做分隔符，就变成
 # sed -i "s#abc#cde#g" file
 # 这时如果abc中包含“/”就可以随便替换了
-- sed -i 's#address=/##g' ./output/dns_blocklist_anti_ad.rsc
-- sed -i 's/\///g' ./output/dns_blocklist_anti_ad.rsc
-- sed -i 's/\./\\\\./g' ./output/dns_blocklist_anti_ad.rsc
-- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_blocklist_anti_ad.rsc
-- sed -i 's/$/&\\$" address=240.0.0.1 type=A comment="Blocklist_Anti_AD"/g' ./output/dns_blocklist_anti_ad.rsc
+- sed -i 's#address=/##g' ./tmp/dns_blocklist_anti_ad.rsc
+- sed -i 's/\///g' ./tmp/dns_blocklist_anti_ad.rsc
+- sed -i 's/\./\\\\./g' ./tmp/dns_blocklist_anti_ad.rsc
+- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./tmp/dns_blocklist_anti_ad.rsc
+- sed -i 's/$/&\\$" address=240.0.0.1 type=A comment="Blocklist_Anti_AD"/g' ./tmp/dns_blocklist_anti_ad.rsc
 # 由于当前 RouterOS 不支持太过复杂的 Regexp，删除长度超过一定的行
-- sed -i '/^.\{120,\}/d' ./output/dns_blocklist_anti_ad.rsc
+- sed -i '/^.\{120,\}/d' ./tmp/dns_blocklist_anti_ad.rsc
 # 删除重复行
-- sort -u ./output/dns_blocklist_anti_ad.rsc -o ./output/dns_blocklist_anti_ad1.rsc
-#- sort -n ./output/dns_blocklist_anti_ad.rsc | sed '$!N; /^.∗\n\1$/!P; D'
-#- sort -n ./output/dns_blocklist_anti_ad.rsc | awk '{if($0!=line)print; line=$0}' 
+- sort -u ./tmp/dns_blocklist_anti_ad.rsc -o ./output/dns_blocklist_anti_ad.rsc
+#- sort -n ./tmp/dns_blocklist_anti_ad.rsc | sed '$!N; /^.∗\n\1$/!P; D'
+#- sort -n ./tmp/dns_blocklist_anti_ad.rsc | awk '{if($0!=line)print; line=$0}' 
 
 - sed -i '1 i/ip dns static remove [/ip dns static find comment="Blocklist_Anti_AD"]' ./output/dns_blocklist_anti_ad.rsc
 - sed -i '2 i/ip dns static' ./output/dns_blocklist_anti_ad.rsc
