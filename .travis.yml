@@ -64,7 +64,7 @@ script:
 #- sort -n ./tmp/dns_blocklist_anti_ad.rsc | sed '$!N; /^.∗\n\1$/!P; D'
 #- sort -n ./tmp/dns_blocklist_anti_ad.rsc | awk '{if($0!=line)print; line=$0}' 
 # 由于当前 RouterOS 不支持太过复杂的 Regexp，删除长度超过一定的行
-- sed -i '/^.\{80,\}/d' ./output/dns_blocklist_anti_ad.rsc
+- sed -i '/^.\{70,\}/d' ./output/dns_blocklist_anti_ad.rsc
 
 - sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_blocklist_anti_ad.rsc
 - sed -i 's/$/&\\$" address=240.0.0.1 type=A comment="Blocklist_Anti_AD"/g' ./output/dns_blocklist_anti_ad.rsc
