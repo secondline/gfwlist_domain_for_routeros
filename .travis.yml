@@ -11,38 +11,43 @@ script:
 - mkdir -p $TRAVIS_BUILD_DIR/tmp
 
 # IPList-v4-novpn.rsc
-- wget -O ./output/IPList-v4-novpn.rsc https://raw.githubusercontent.com/PaPerseller/chn-iplist/master/chnroute-ipv4.txt
-- sed -i 's/^/add address=/g' ./output/IPList-v4-novpn.rsc
-- sed -i 's/$/ disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List"/g' ./output/IPList-v4-novpn.rsc
+- wget -O ./tmp/IPList-v4-novpn.rsc https://raw.githubusercontent.com/PaPerseller/chn-iplist/master/chnroute-ipv4.txt
+- sed -i 's/^/add address=/g' ./tmp/IPList-v4-novpn.rsc
+- sed -i 's/$/ disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List"/g' ./tmp/IPList-v4-novpn.rsc
+# 删除重复行
+- sort -u ./tmp/IPList-v4-novpn.rsc -o ./output/IPList-v4-novpn.rsc
 - sed -i '1 i/ip firewall address-list remove [/ip firewall address-list find comment="NoVPN-IPv4-List"]' ./output/IPList-v4-novpn.rsc
 - sed -i '2 i/ip firewall address-list' ./output/IPList-v4-novpn.rsc
 - sed -i '2 G' ./output/IPList-v4-novpn.rsc
 
 # IPList-v6-novpn.rsc
-- wget -O ./output/IPList-v6-novpn.rsc https://raw.githubusercontent.com/PaPerseller/chn-iplist/master/chnroute-ipv6.txt
-- sed -i 's/^/add address=/g' ./output/IPList-v6-novpn.rsc
-- sed -i 's/$/ disabled=no list=LIST_IPv6_NOVPN comment="NoVPN-IPv6-List"/g' ./output/IPList-v6-novpn.rsc
+- wget -O ./tmp/IPList-v6-novpn.rsc https://raw.githubusercontent.com/PaPerseller/chn-iplist/master/chnroute-ipv6.txt
+- sed -i 's/^/add address=/g' ./tmp/IPList-v6-novpn.rsc
+- sed -i 's/$/ disabled=no list=LIST_IPv6_NOVPN comment="NoVPN-IPv6-List"/g' ./tmp/IPList-v6-novpn.rsc
+# 删除重复行
+- sort -u ./tmp/IPList-v6-novpn.rsc -o ./output/IPList-v6-novpn.rsc
 - sed -i '1 i/ipv6 firewall address-list remove [/ipv6 firewall address-list find comment="NoVPN-IPv6-List"]' ./output/IPList-v6-novpn.rsc
 - sed -i '2 i/ipv6 firewall address-list' ./output/IPList-v6-novpn.rsc
 - sed -i '2 G' ./output/IPList-v6-novpn.rsc
 
 # Convert [OISD | Domain Blocklist] to RouterOS
-- wget -O ./output/dns_blocklist_oisd.rsc https://dnsmasq.oisd.nl/basic/
+- wget -O ./tmp/dns_blocklist_oisd.rsc https://dnsmasq.oisd.nl/basic/
 # 删除 dns_blocklist_oisd.rsc 所有以 # 开头的行和空行
-- sed -i '/^#/d' ./output/dns_blocklist_oisd.rsc
-- sed -i '/^$/d' ./output/dns_blocklist_oisd.rsc
+- sed -i '/^#/d' ./tmp/dns_blocklist_oisd.rsc
+- sed -i '/^$/d' ./tmp/dns_blocklist_oisd.rsc
 # 方法一：如果要替换字符串中的“/”，使用转义符\，“\/”
 # 方法二：如果字符串中有“/”，就会发生混乱，在这个时候可以用#当做分隔符，就变成
 # sed -i "s#abc#cde#g" file
 # 这时如果abc中包含“/”就可以随便替换了
-- sed -i 's#address=/##g' ./output/dns_blocklist_oisd.rsc
-- sed -i 's/\/\#//g' ./output/dns_blocklist_oisd.rsc
-- sed -i 's/\./\\\\./g' ./output/dns_blocklist_oisd.rsc
-- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_blocklist_oisd.rsc
-- sed -i 's/$/&\\$" address=240.0.0.1 type=A comment="Blocklist_OISD"/g' ./output/dns_blocklist_oisd.rsc
+- sed -i 's#address=/##g' ./tmp/dns_blocklist_oisd.rsc
+- sed -i 's/\/\#//g' ./tmp/dns_blocklist_oisd.rsc
+- sed -i 's/\./\\\\./g' ./tmp/dns_blocklist_oisd.rsc
+- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./tmp/dns_blocklist_oisd.rsc
+- sed -i 's/$/&\\$" address=240.0.0.1 type=A comment="Blocklist_OISD"/g' ./tmp/dns_blocklist_oisd.rsc
 # 由于当前 RouterOS 不支持太过复杂的 Regexp，删除长度超过一定的行
-- sed -i '/^.\{120,\}/d' ./output/dns_blocklist_oisd.rsc
-
+- sed -i '/^.\{120,\}/d' ./tmp/dns_blocklist_oisd.rsc
+# 删除重复行
+- sort -u ./tmp/dns_blocklist_oisd.rsc -o ./output/dns_blocklist_oisd.rsc
 - sed -i '1 i/ip dns static remove [/ip dns static find comment="Blocklist_OISD"]' ./output/dns_blocklist_oisd.rsc
 - sed -i '2 i/ip dns static' ./output/dns_blocklist_oisd.rsc
 - sed -i '2 G' ./output/dns_blocklist_oisd.rsc
@@ -67,72 +72,51 @@ script:
 - sort -u ./tmp/dns_blocklist_anti_ad.rsc -o ./output/dns_blocklist_anti_ad.rsc
 #- sort -n ./tmp/dns_blocklist_anti_ad.rsc | sed '$!N; /^.∗\n\1$/!P; D'
 #- sort -n ./tmp/dns_blocklist_anti_ad.rsc | awk '{if($0!=line)print; line=$0}' 
-
 - sed -i '1 i/ip dns static remove [/ip dns static find comment="Blocklist_Anti_AD"]' ./output/dns_blocklist_anti_ad.rsc
 - sed -i '2 i/ip dns static' ./output/dns_blocklist_anti_ad.rsc
 - sed -i '2 G' ./output/dns_blocklist_anti_ad.rsc
 
-# dnsmasq-china-list - 192.168.32.1
-- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_domain.192.168.32.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
-- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_apple.192.168.32.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
-#- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_bogus-nxdomain.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/bogus-nxdomain.china.conf
+# dnsmasq-china-list
+- wget -N --no-check-certificate -O ./tmp/dnsmasq_whitelist_domain.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
+- wget -N --no-check-certificate -O ./tmp/dnsmasq_whitelist_apple.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
+#- wget -N --no-check-certificate -O ./tmp/dnsmasq_whitelist_bogus-nxdomain.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/bogus-nxdomain.china.conf
 # sed 可以用行为单位进行部分数据的查找与替换 g 标识符表示全局查找替换
 # sed 's/要被取代的字串/新的字串/g'
-- sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_domain.192.168.32.1.conf
-- sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_apple.192.168.32.1.conf
+- sed -i 's/114.114.114.114/223.5.5.5/g' ./tmp/dnsmasq_whitelist_domain.conf
+- sed -i 's/114.114.114.114/223.5.5.5/g' ./tmp/dnsmasq_whitelist_apple.conf
+# 删除重复行 dnsmasq-china-list
+- sort -u ./tmp/dnsmasq_whitelist_domain.conf -o ./output/dnsmasq_whitelist_domain.conf
+- sort -u ./tmp/dnsmasq_whitelist_apple.conf -o ./output/dnsmasq_whitelist_apple.conf
 
-# dnsmasq-china-list - 192.168.16.1
-- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_domain.192.168.16.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
-- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_apple.192.168.16.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
-#- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_bogus-nxdomain.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/bogus-nxdomain.china.conf
-# sed 可以用行为单位进行部分数据的查找与替换 g 标识符表示全局查找替换
-# sed 's/要被取代的字串/新的字串/g'
-- sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_domain.192.168.16.1.conf
-- sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_apple.192.168.16.1.conf
-
-# dnsmasq-china-list - 192.168.14.1
-- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_domain.192.168.14.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
-- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_apple.192.168.14.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
-#- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_bogus-nxdomain.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/bogus-nxdomain.china.conf
-# sed 可以用行为单位进行部分数据的查找与替换 g 标识符表示全局查找替换
-# sed 's/要被取代的字串/新的字串/g'
-- sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_domain.192.168.14.1.conf
-- sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_apple.192.168.14.1.conf
-
-# dnsmasq-china-list - 192.168.13.1
-- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_domain.192.168.13.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
-- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_apple.192.168.13.1.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
-#- wget -N --no-check-certificate -O ./output/dnsmasq_whitelist_bogus-nxdomain.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/bogus-nxdomain.china.conf
-# sed 可以用行为单位进行部分数据的查找与替换 g 标识符表示全局查找替换
-# sed 's/要被取代的字串/新的字串/g'
-- sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_domain.192.168.13.1.conf
-- sed -i 's/114.114.114.114/223.5.5.5/g' ./output/dnsmasq_whitelist_apple.192.168.13.1.conf
-
-- wget -N --no-check-certificate -O ./output/dns_whitelist_domain.china.rsc https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
-- wget -N --no-check-certificate -O ./output/dns_whitelist_apple.china.rsc https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
+- wget -N --no-check-certificate -O ./tmp/dns_whitelist_domain.china.rsc https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
+- wget -N --no-check-certificate -O ./tmp/dns_whitelist_apple.china.rsc https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
 # 如果字符串中有“/”，就会发生混乱，在这个时候可以用#当做分隔符，就变成
 # sed -i "s#abc#cde#g" file
 # 这时如果abc中包含“/”就可以随便替换了
-- sed -i 's#server=/##g' ./output/dns_whitelist_domain.china.rsc
-- sed -i 's#/114.114.114.114##g' ./output/dns_whitelist_domain.china.rsc
+- sed -i 's#server=/##g' ./tmp/dns_whitelist_domain.china.rsc
+- sed -i 's#/114.114.114.114##g' ./tmp/dns_whitelist_domain.china.rsc
 # 删除 dns_whitelist_domain.china.rsc 所有包含 # 的行
-- sed -i '/#/d' ./output/dns_whitelist_domain.china.rsc
-- sed -i 's/\./\\\\./g' ./output/dns_whitelist_domain.china.rsc
-- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_whitelist_domain.china.rsc
-- sed -i 's/$/&\\$" type=FWD forward-to=$dnsCN comment="CNListDomain"/g' ./output/dns_whitelist_domain.china.rsc
+- sed -i '/#/d' ./tmp/dns_whitelist_domain.china.rsc
+- sed -i 's/\./\\\\./g' ./tmp/dns_whitelist_domain.china.rsc
+- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./tmp/dns_whitelist_domain.china.rsc
+- sed -i 's/$/&\\$" type=FWD forward-to=$dnsCN comment="CNListDomain"/g' ./tmp/dns_whitelist_domain.china.rsc
+# 删除重复行
+- sort -u ./tmp/dns_whitelist_domain.china.rsc -o ./output/dns_whitelist_domain.china.rsc
 - sed -i '1 i:global dnsCN' ./output/dns_whitelist_domain.china.rsc
 - sed -i '2 i/ip dns static remove [/ip dns static find comment="GFWListDomain"]' ./output/dns_whitelist_domain.china.rsc
 - sed -i '3 i/ip dns static remove [/ip dns static find comment="CNListDomain"]' ./output/dns_whitelist_domain.china.rsc
 - sed -i '4 i/ip dns static' ./output/dns_whitelist_domain.china.rsc
 - sed -i '4 G' ./output/dns_whitelist_domain.china.rsc
 
-- sed -i 's#server=/##g' ./output/dns_whitelist_apple.china.rsc
-- sed -i 's#/114.114.114.114##g' ./output/dns_whitelist_apple.china.rsc
+- sed -i 's#server=/##g' ./tmp/dns_whitelist_apple.china.rsc
+- sed -i 's#/114.114.114.114##g' ./tmp/dns_whitelist_apple.china.rsc
 # 删除 dns_whitelist_apple.china.rsc 所有包含 # 的行
-- sed -i '/#/d' ./output/dns_whitelist_apple.china.rsc
-- sed -i 's/\./\\\\./g' ./output/dns_whitelist_apple.china.rsc
-- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_whitelist_apple.china.rsc
-- sed -i 's/$/&\\$" type=FWD forward-to=$dnsCN comment="CNListDomain:Apple"/g' ./output/dns_whitelist_apple.china.rsc
+- sed -i '/#/d' ./tmp/dns_whitelist_apple.china.rsc
+- sed -i 's/\./\\\\./g' ./tmp/dns_whitelist_apple.china.rsc
+- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./tmp/dns_whitelist_apple.china.rsc
+- sed -i 's/$/&\\$" type=FWD forward-to=$dnsCN comment="CNListDomain:Apple"/g' ./tmp/dns_whitelist_apple.china.rsc
+# 删除重复行
+- sort -u ./tmp/dns_whitelist_apple.china.rsc -o ./output/dns_whitelist_apple.china.rsc
 - sed -i '1 i:global dnsCN' ./output/dns_whitelist_apple.china.rsc
 - sed -i '2 i/ip dns static remove [/ip dns static find comment="CNListDomain:Apple"]' ./output/dns_whitelist_apple.china.rsc
 - sed -i '3 i/ip dns static' ./output/dns_whitelist_apple.china.rsc
@@ -140,14 +124,22 @@ script:
 # 
 - wget -N --no-check-certificate -O ./tmp/gfwlist2dnsmasq.sh https://raw.githubusercontent.com/cokebar/gfwlist2dnsmasq/master/gfwlist2dnsmasq.sh
 - chmod +x ./tmp/gfwlist2dnsmasq.sh
-- ./tmp/gfwlist2dnsmasq.sh -d 192.168.32.1 -p 53 -o ./output/dnsmasq_gfwlist_192.168.32.1.conf
-- ./tmp/gfwlist2dnsmasq.sh -d 192.168.16.1 -p 53 -o ./output/dnsmasq_gfwlist_192.168.16.1.conf
-- ./tmp/gfwlist2dnsmasq.sh -d 192.168.14.1 -p 53 -o ./output/dnsmasq_gfwlist_192.168.14.1.conf
-- ./tmp/gfwlist2dnsmasq.sh -d 192.168.13.1 -p 53 -o ./output/dnsmasq_gfwlist_192.168.13.1.conf
-- ./tmp/gfwlist2dnsmasq.sh -l -o ./output/dns_gfwlist_domain.rsc
-- sed -i 's/\./\\\\./g' ./output/dns_gfwlist_domain.rsc
-- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_gfwlist_domain.rsc
-- sed -i 's/$/&\\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain"/g' ./output/dns_gfwlist_domain.rsc
+- ./tmp/gfwlist2dnsmasq.sh -d 192.168.32.1 -p 53 -o ./tmp/dnsmasq_gfwlist_192.168.32.1.conf
+- ./tmp/gfwlist2dnsmasq.sh -d 192.168.16.1 -p 53 -o ./tmp/dnsmasq_gfwlist_192.168.16.1.conf
+- ./tmp/gfwlist2dnsmasq.sh -d 192.168.14.1 -p 53 -o ./tmp/dnsmasq_gfwlist_192.168.14.1.conf
+- ./tmp/gfwlist2dnsmasq.sh -d 192.168.13.1 -p 53 -o ./tmp/dnsmasq_gfwlist_192.168.13.1.conf
+# 删除重复行
+- sort -u ./tmp/dnsmasq_gfwlist_192.168.32.1.conf -o ./output/dnsmasq_gfwlist_192.168.32.1.conf
+- sort -u ./tmp/dnsmasq_gfwlist_192.168.16.1.conf -o ./output/dnsmasq_gfwlist_192.168.16.1.conf
+- sort -u ./tmp/dnsmasq_gfwlist_192.168.14.1.conf -o ./output/dnsmasq_gfwlist_192.168.14.1.conf
+- sort -u ./tmp/dnsmasq_gfwlist_192.168.13.1.conf -o ./output/dnsmasq_gfwlist_192.168.13.1.conf
+
+- ./tmp/gfwlist2dnsmasq.sh -l -o ./tmp/dns_gfwlist_domain.rsc
+- sed -i 's/\./\\\\./g' ./tmp/dns_gfwlist_domain.rsc
+- sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./tmp/dns_gfwlist_domain.rsc
+- sed -i 's/$/&\\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain"/g' ./tmp/dns_gfwlist_domain.rsc
+# 删除重复行
+- sort -u ./tmp/dns_gfwlist_domain.rsc -o ./output/dns_gfwlist_domain.rsc
 - sed -i '1 i:global dnsGFW' ./output/dns_gfwlist_domain.rsc
 - sed -i '2 i/ip dns static remove [/ip dns static find comment~"GFWListDomain"]' ./output/dns_gfwlist_domain.rsc
 - sed -i '3 i/ip dns static remove [/ip dns static find comment~"CNListDomain"]' ./output/dns_gfwlist_domain.rsc
@@ -161,34 +153,25 @@ script:
 - git config user.name "secondline"
 - git config user.email "secondline@hotmail.com"
 
-#- git rm IPList-v4-novpn.rsc
-#- git rm IPList-v6-novpn.rsc
-
-- git rm dnsmasq_whitelist_domain.192.168.32.1.conf
-- git rm dnsmasq_whitelist_apple.192.168.32.1.conf
-
-- git rm dnsmasq_whitelist_domain.192.168.16.1.conf
-- git rm dnsmasq_whitelist_apple.192.168.16.1.conf
-
-- git rm dnsmasq_whitelist_domain.192.168.14.1.conf
-- git rm dnsmasq_whitelist_apple.192.168.14.1.conf
-
-- git rm dnsmasq_whitelist_domain.192.168.13.1.conf
-- git rm dnsmasq_whitelist_apple.192.168.13.1.conf
+- git rm dnsmasq_whitelist_domain.conf
+- git rm dnsmasq_whitelist_apple.conf
 - #git rm dnsmasq_whitelist_bogus-nxdomain.china.conf
 
-- git rm dns_whitelist_domain.china.rsc
-- git rm dns_whitelist_apple.china.rsc
-
-- git rm dns_gfwlist_domain.rsc
-- git rm dns_blocklist_oisd.rsc
-- git rm dns_blocklist_anti_ad.rsc
 - git rm dnsmasq_gfwlist_192.168.32.1.conf
 - git rm dnsmasq_gfwlist_192.168.16.1.conf
 - git rm dnsmasq_gfwlist_192.168.14.1.conf
 - git rm dnsmasq_gfwlist_192.168.13.1.conf
-- git commit -m "Remove Old IPList && DNS GFWList Configuration"
 
+- git rm IPList-v4-novpn.rsc
+- git rm IPList-v6-novpn.rsc
+
+- git rm dns_whitelist_domain.china.rsc
+- git rm dns_whitelist_apple.china.rsc
+- git rm dns_gfwlist_domain.rsc
+- git rm dns_blocklist_oisd.rsc
+- git rm dns_blocklist_anti_ad.rsc
+
+- git commit -m "Remove Old IPList && DNS GFWList Configuration"
 - cp $TRAVIS_BUILD_DIR/output/* .
 - git add -A
 - git commit -a -m "Configuration Files Generated on [$DATE_TIME]"
