@@ -65,7 +65,7 @@ script:
 
 # 输出 dnsmasq 的 DNS 广告过滤列表
 - sed -i 's/^/address=\//g' ./output/dnsmasq_blocklist_ad.hosts
-- sed -i 's/$/&\\$\/\#/g' ./output/dnsmasq_blocklist_ad.hosts
+- sed -i 's/$/&\/\#/g' ./output/dnsmasq_blocklist_ad.hosts
 
 # 输出 RouterOS 的 DNS 广告过滤列表
 - sed -i 's/\./\\\\./g' ./output/dns_blocklist_ad.rsc
