@@ -22,3 +22,9 @@ add regexp="(^|(.*\\.))sehuatang\\.net\$" type=FWD forward-to=$dnsGFW comment="G
 add regexp="(^|(.*\\.))9wm9\\.cc\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain:Myself"
 add regexp=".*\\.cc\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain:Myself"
 add regexp="(^|(.*\\.))quickconnect\\.to\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain:Myself"
+add regexp="(^|(.*\\.))bing\\.com\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain:Myself"
+add regexp="(^|(.*\\.))cnbeta\\.com\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain:Myself"
+add regexp=".*\\.tw\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain:Myself"
+add regexp=".*\\.hk\$" type=FWD forward-to=$dnsGFW comment="GFWListDomain:Myself"
+
+add regexp="(^|(.*\\.))sn\\.mynetname\\.net\$" type=FWD forward-to=$dnsCN comment="GFWListDomain:Myself"
