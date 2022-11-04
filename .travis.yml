@@ -164,7 +164,6 @@ script:
 - git rm dns_whitelist_domain.china.rsc
 - git rm dns_whitelist_apple.china.rsc
 - git rm dns_gfwlist_domain.rsc
-- git rm dns_blocklist_oisd.rsc
 - git rm dns_blocklist_anti_ad.rsc
 
 - git commit -m "Remove Old IPList && DNS GFWList Configuration"
