@@ -64,7 +64,7 @@ script:
 # 由于当前 RouterOS 不支持太过复杂的 Regexp，删除长度超过一定的行
 - sed -i '/^.\{120,\}/d' ./output/dns_blocklist_anti_ad.rsc
 # 删除重复行
-- sort -u ./output/dns_blocklist_anti_ad.rsc
+- sort -u ./output/dns_blocklist_anti_ad.rsc -o ./output/dns_blocklist_anti_ad1.rsc
 #- sort -n ./output/dns_blocklist_anti_ad.rsc | sed '$!N; /^.∗\n\1$/!P; D'
 #- sort -n ./output/dns_blocklist_anti_ad.rsc | awk '{if($0!=line)print; line=$0}' 
 
