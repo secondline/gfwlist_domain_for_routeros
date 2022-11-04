@@ -68,7 +68,7 @@ script:
 - sed -i 's/$/&\\$\/\#/g' ./output/dnsmasq_blocklist_ad.hosts
 
 # 输出 RouterOS 的 DNS 广告过滤列表
-- sed -i 's/\./\\\\./g' ./tmp/dns_blocklist_ad.rsc
+- sed -i 's/\./\\\\./g' ./output/dns_blocklist_ad.rsc
 # 由于当前 RouterOS 不支持太过复杂的 Regexp，删除长度超过一定的行
 - sed -i '/^.\{70,\}/d' ./output/dns_blocklist_ad.rsc
 - sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_blocklist_ad.rsc
@@ -163,13 +163,15 @@ script:
 - git rm dnsmasq_gfwlist_192.168.14.1.conf
 - git rm dnsmasq_gfwlist_192.168.13.1.conf
 
+- git rm dnsmasq_blocklist_ad.hosts
+
 - git rm IPList-v4-novpn.rsc
 - git rm IPList-v6-novpn.rsc
 
 - git rm dns_whitelist_domain.china.rsc
 - git rm dns_whitelist_apple.china.rsc
 - git rm dns_gfwlist_domain.rsc
-- git rm dns_blocklist_anti_ad.rsc
+- git rm dns_blocklist_ad.rsc
 
 - git commit -m "Remove Old IPList && DNS GFWList Configuration"
 - cp $TRAVIS_BUILD_DIR/output/* .
