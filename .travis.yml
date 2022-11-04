@@ -41,7 +41,7 @@ script:
 # 这时如果abc中包含“/”就可以随便替换了
 - sed -i 's#address=/##g' ./tmp/dns_blocklist_oisd.rsc
 - sed -i 's/\/\#//g' ./tmp/dns_blocklist_oisd.rsc
-- sed -i 's/\./\\\\./g' ./tmp/dns_blocklist_oisd.rsc
+#- sed -i 's/\./\\\\./g' ./tmp/dns_blocklist_oisd.rsc
 
 # Convert [anti-AD 中文区的广告过滤列表] to RouterOS [https://github.com/privacy-protection-tools/anti-AD]
 - wget -O ./tmp/dns_blocklist_anti_ad.rsc https://anti-ad.net/anti-ad-for-dnsmasq.conf
@@ -54,7 +54,7 @@ script:
 # 这时如果abc中包含“/”就可以随便替换了
 - sed -i 's#address=/##g' ./tmp/dns_blocklist_anti_ad.rsc
 - sed -i 's/\///g' ./tmp/dns_blocklist_anti_ad.rsc
-- sed -i 's/\./\\\\./g' ./tmp/dns_blocklist_anti_ad.rsc
+#- sed -i 's/\./\\\\./g' ./tmp/dns_blocklist_anti_ad.rsc
 
 # 合并 [OISD | Domain Blocklist] 和 [anti-AD 中文区的广告过滤列表]
 # 将 dns_blocklist_oisd.rsc 追加到 dns_blocklist_anti_ad.rsc 的末尾
@@ -63,9 +63,12 @@ script:
 - sort -u ./tmp/dns_blocklist_anti_ad.rsc -o ./output/dns_blocklist_ad.rsc
 - cp ./output/dns_blocklist_ad.rsc ./output/dnsmasq_blocklist_ad.hosts
 
+# 输出 dnsmasq 的 DNS 广告过滤列表
 - sed -i 's/^/address=\//g' ./output/dnsmasq_blocklist_ad.hosts
-- sed -i 's/$/$\/\#/g' ./output/dnsmasq_blocklist_ad.hosts
+- sed -i 's/$/&\\$\/\#/g' ./output/dnsmasq_blocklist_ad.hosts
 
+# 输出 RouterOS 的 DNS 广告过滤列表
+- sed -i 's/\./\\\\./g' ./tmp/dns_blocklist_ad.rsc
 # 由于当前 RouterOS 不支持太过复杂的 Regexp，删除长度超过一定的行
 - sed -i '/^.\{70,\}/d' ./output/dns_blocklist_ad.rsc
 - sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_blocklist_ad.rsc
