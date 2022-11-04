@@ -70,7 +70,7 @@ script:
 # 输出 RouterOS 的 DNS 广告过滤列表
 - sed -i 's/\./\\\\./g' ./output/dns_blocklist_ad.rsc
 # 由于当前 RouterOS 不支持太过复杂的 Regexp，删除长度超过一定的行
-- sed -i '/^.\{72,\}/d' ./output/dns_blocklist_ad.rsc
+- sed -i '/^.\{68,\}/d' ./output/dns_blocklist_ad.rsc
 - sed -i 's/^/add regexp="(^|(.*\\\\.))&/g' ./output/dns_blocklist_ad.rsc
 - sed -i 's/$/&\\$" address=240.0.0.1 type=A comment="Blocklist_AD"/g' ./output/dns_blocklist_ad.rsc
 - sed -i '1 i/ip dns static remove [/ip dns static find comment="Blocklist_AD"]' ./output/dns_blocklist_ad.rsc
