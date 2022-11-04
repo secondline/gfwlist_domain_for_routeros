@@ -58,7 +58,7 @@ script:
 
 # 合并 [OISD | Domain Blocklist] 和 [anti-AD 中文区的广告过滤列表]
 # 将 dns_blocklist_oisd.rsc 追加到 dns_blocklist_anti_ad.rsc 的末尾
-- cat dns_blocklist_oisd.rsc >> dns_blocklist_anti_ad.rsc
+- cat ./tmp/dns_blocklist_oisd.rsc >> ./tmp/dns_blocklist_anti_ad.rsc
 # 删除重复行
 - sort -u ./tmp/dns_blocklist_anti_ad.rsc -o ./output/dns_blocklist_anti_ad.rsc
 #- sort -n ./tmp/dns_blocklist_anti_ad.rsc | sed '$!N; /^.∗\n\1$/!P; D'
