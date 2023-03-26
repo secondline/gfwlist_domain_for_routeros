@@ -98,6 +98,7 @@ add address=172.16.0.0/12 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-L
 
 # Blizzard Entertainment, Inc
 add address=137.221.64.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
+add address=59.153.40.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
 #add address=103.198.32.0/23 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
 #add address=110.45.208.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
 #add address=117.52.26.0/23 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
@@ -107,7 +108,6 @@ add address=137.221.64.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4
 #add address=117.52.36.0/23 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
 #add address=117.52.6.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
 #add address=121.254.137.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
-
 
 # Apple-IP
 add address=17.0.0.0/8 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
