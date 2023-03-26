@@ -8,6 +8,29 @@
 ##add address=us.download.nvidia.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 ##add address=cn.download.nvidia.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 
+/ip firewall address-list remove [/ip firewall address-list find comment~"NoVPN-IPv4-List:IP"]
+/ip firewall address-list
+
+add address=10.0.0.0/8 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=192.168.0.0/16 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=172.16.0.0/12 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+
+# Blizzard Entertainment, Inc
+add address=137.221.64.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
+add address=59.153.40.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
+#add address=103.198.32.0/23 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
+#add address=110.45.208.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
+#add address=117.52.26.0/23 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
+#add address=117.52.28.0/23 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
+#add address=117.52.33.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
+#add address=117.52.34.0/23 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
+#add address=117.52.36.0/23 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
+#add address=117.52.6.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
+#add address=121.254.137.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
+
+# Apple-IP
+add address=17.0.0.0/8 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+
 # Microsoft AZure 都不通过 VPN 连接
 #add address=azure.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 #add address=www.azure.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
@@ -88,29 +111,6 @@
 #add address=browser.events.data.msn.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 #add address=browser.events.data.msn.cn disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 # Edge Browser 都不通过 VPN 连接
-
-/ip firewall address-list remove [/ip firewall address-list find comment~"NoVPN-IPv4-List:IP"]
-/ip firewall address-list
-
-add address=10.0.0.0/8 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
-add address=192.168.0.0/16 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
-add address=172.16.0.0/12 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
-
-# Blizzard Entertainment, Inc
-add address=137.221.64.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
-add address=59.153.40.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
-#add address=103.198.32.0/23 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
-#add address=110.45.208.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
-#add address=117.52.26.0/23 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
-#add address=117.52.28.0/23 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
-#add address=117.52.33.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
-#add address=117.52.34.0/23 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
-#add address=117.52.36.0/23 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
-#add address=117.52.6.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
-#add address=121.254.137.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
-
-# Apple-IP
-add address=17.0.0.0/8 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
 
 # Microsoft-IP
 #add address=13.107.6.152/31 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
