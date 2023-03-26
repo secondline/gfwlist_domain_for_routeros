@@ -19,7 +19,7 @@ add address=172.16.0.0/12 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-L
 add address=17.0.0.0/8 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
 
 # Blizzard Entertainment, Inc
-/ip firewall address-list remove [/ip firewall address-list find comment~"NoVPN-IPv4-List:Blizzard]
+/ip firewall address-list remove [/ip firewall address-list find comment~"NoVPN-IPv4-List:Blizzard"]
 /ip firewall address-list
 
 add address=137.221.64.0/24 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
