@@ -53,6 +53,8 @@ add address=35.221.233.64 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-L
 add address=35.234.2.174 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
 add address=35.194.231.25 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
 add address=35.236.157.77 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
+add address=35.189.166.135 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
+add address=35.234.59.52 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
 
 # Diablo Asia
 add address=35.201.91.89 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Blizzard"
