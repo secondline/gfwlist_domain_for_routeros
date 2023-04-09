@@ -156,3 +156,35 @@ add address=34.64.183.38 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-Li
 #add address=132.245.0.0/16 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
 #add address=150.171.32.0/22 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
 # Microsoft-IP
+
+# Special-IPv4-List
+/ip firewall address-list remove [/ip firewall address-list find comment~"Special-IPv4-List:Blizzard"]
+/ip firewall address-list
+
+add address=137.221.64.0/24 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
+add address=59.153.40.0/24 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
+add address=103.198.32.0/23 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
+add address=110.45.208.0/24 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
+add address=117.52.26.0/23 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
+add address=117.52.28.0/23 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
+add address=117.52.33.0/24 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
+add address=117.52.34.0/23 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
+add address=117.52.36.0/23 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
+add address=117.52.6.0/24 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
+add address=121.254.137.0/24 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
+
+# Wow US
+add address=104.198.0.0/20 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
+add address=137.221.96.0/20 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
+add address=34.82.0.0/15 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
+add address=34.145.0.0/17 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
+add address=34.127.0.0/17 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
+add address=34.105.0.0/17 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
+add address=34.118.192.0/18 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
+add address=34.168.0.0/15 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
+add address=35.199.128.0/18 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
+add address=35.203.128.0/18 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
+add address=35.227.128.0/18 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
+add address=35.230.0.0/17 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
+add address=35.233.128.0/17 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
+add address=35.247.0.0/17 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
