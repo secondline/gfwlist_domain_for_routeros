@@ -1,22 +1,8 @@
 /ip firewall address-list remove [/ip firewall address-list find comment~"Special-IPv4-List:Blizzard"]
 /ip firewall address-list
 
-add address=137.221.64.0/24 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
-add address=59.153.40.0/24 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
-add address=103.198.32.0/23 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
-add address=110.45.208.0/24 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
-add address=117.52.26.0/23 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
-add address=117.52.28.0/23 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
-add address=117.52.33.0/24 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
-add address=117.52.34.0/23 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
-add address=117.52.36.0/23 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
-add address=117.52.6.0/24 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
-add address=121.254.137.0/24 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard"
-
 # Wow US
-add address=24.105.32.0/20 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
 add address=104.198.0.0/20 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
-add address=137.221.96.0/20 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
 add address=34.82.0.0/15 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
 add address=34.145.0.0/17 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
 add address=34.127.0.0/17 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.US"
