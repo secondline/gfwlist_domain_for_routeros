@@ -18,6 +18,17 @@ add address=172.16.0.0/12 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-L
 # Apple-IP
 add address=17.0.0.0/8 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
 
+# Checkip.Synology.com
+add address=157.245.224.168 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=138.68.28.244 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=206.189.214.49 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=104.248.79.120 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=165.227.63.200 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=142.93.81.166 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=159.89.129.146 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=159.65.77.153 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+add address=159.89.142.52 disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:IP"
+
 # Microsoft AZure 都不通过 VPN 连接
 #add address=azure.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
 #add address=www.azure.com disabled=no list=LIST_IPv4_NOVPN comment="NoVPN-IPv4-List:Domain"
