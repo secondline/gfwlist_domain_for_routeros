@@ -7,7 +7,9 @@ add regexp="(^|(.*\\.))cloud[0-9]?\\.mikrotik\\.com\$" type=FWD forward-to=119.2
 add regexp="(^|(.*\\.))cloud[0-9]?\\.mikrotik\\.com\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Cloud.Mikrotik.Com"
 add regexp="(.*\\.)sn\\.mynetname\\.net\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Cloud.Mikrotik.Com"
 add regexp="(.*\\.)sn\\.mynetname\\.net\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Cloud.Mikrotik.Com"
+add regexp="(.*\\.)checkip\\.synology\\.net\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Cloud.Mikrotik.Com"
 add regexp="(.*\\.)checkip\\.synology\\.net\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Cloud.Mikrotik.Com"
+add regexp="(.*\\.)checkipv6\\.synology\\.net\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Cloud.Mikrotik.Com"
 add regexp="(.*\\.)checkipv6\\.synology\\.net\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Cloud.Mikrotik.Com"
 
 /ip dns static remove [/ip dns static find comment="CNListDomain:Cloudapp.Azure.Com"]
