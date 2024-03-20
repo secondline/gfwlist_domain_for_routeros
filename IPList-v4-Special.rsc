@@ -53,3 +53,16 @@ add address=35.234.0.0/18 disabled=no list=LIST_IPv4_Special comment="Special-IP
 add address=104.199.128.0/17 disabled=no list=LIST_IPv4_Special comment="Special-IPv4-List:Blizzard.Wow.Asia"
 
 # Diablo Asia
+
+
+/ip firewall address-list remove [/ip firewall address-list find comment~"CloudFlare-IPv4-List"]
+/ip firewall address-list
+
+add address=199.223.232.0/21 disabled=no list=LIST_IPv4_CloudFlare comment="CloudFlare-IPv4-List:Youtube"
+add address=207.223.160.0/20 disabled=no list=LIST_IPv4_CloudFlare comment="CloudFlare-IPv4-List:Youtube"
+add address=208.65.152.0/22 disabled=no list=LIST_IPv4_CloudFlare comment="CloudFlare-IPv4-List:Youtube"
+add address=208.117.224.0/19 disabled=no list=LIST_IPv4_CloudFlare comment="CloudFlare-IPv4-List:Youtube"
+add address=209.85.128.0/17 disabled=no list=LIST_IPv4_CloudFlare comment="CloudFlare-IPv4-List:Youtube"
+add address=216.58.192.0/19 disabled=no list=LIST_IPv4_CloudFlare comment="CloudFlare-IPv4-List:Youtube"
+add address=216.239.32.0/19 disabled=no list=LIST_IPv4_CloudFlare comment="CloudFlare-IPv4-List:Youtube"
+
