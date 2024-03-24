@@ -53,8 +53,6 @@ add address=35.234.0.0/18 disabled=no list=LIST_IPv4_Out_GFW_Bonding comment="Ou
 add address=104.199.128.0/17 disabled=no list=LIST_IPv4_Out_GFW_Bonding comment="Out_GFW_Bonding_IPv4_List:Blizzard.Wow.Asia"
 
 # Diablo Asia
-/ip firewall address-list remove [/ip firewall address-list find comment~"Out_GFW_Bonding_IPv4_List:Blizzard"]
-/ip firewall address-list
 
 # Wow US
 add address=104.198.0.0/20 disabled=no list=LIST_IPv4_Out_GFW_Bonding comment="Out_GFW_Bonding_IPv4_List:Blizzard.Wow.US"
