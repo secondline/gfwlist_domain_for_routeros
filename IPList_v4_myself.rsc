@@ -23,6 +23,9 @@ add address=159.89.142.52 disabled=no list=LIST_IPv4_Out_GFW_No comment="Out_GFW
 /ip firewall address-list remove [/ip firewall address-list find comment="Out_GFW_No_IPv4_List:Domain"]
 /ip firewall address-list
 
+# Add checkip.synology.com to Out_GFW_No_IPv4_List
+add address="checkip.synology.com" disabled=no list=LIST_IPv4_Out_GFW_No comment="Out_GFW_No_IPv4_List:Domain"
+
 #add address=bbs.et8.net disabled=no list=LIST_IPv4_Out_GFW_No comment="Out_GFW_No_IPv4_List:Domain"
 ##add address=nvidia.com disabled=no list=LIST_IPv4_Out_GFW_No comment="Out_GFW_No_IPv4_List:Domain"
 ##add address=nvidia.cn disabled=no list=LIST_IPv4_Out_GFW_No comment="Out_GFW_No_IPv4_List:Domain"
