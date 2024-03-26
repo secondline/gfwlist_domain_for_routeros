@@ -17,6 +17,7 @@ add address=35.227.128.0/18 disabled=no list=LIST_IPv4_Out_GFW_Bonding comment="
 add address=35.230.0.0/17 disabled=no list=LIST_IPv4_Out_GFW_Bonding comment="Out_GFW_Bonding_IPv4_List:Blizzard.Wow.US"
 add address=35.233.128.0/17 disabled=no list=LIST_IPv4_Out_GFW_Bonding comment="Out_GFW_Bonding_IPv4_List:Blizzard.Wow.US"
 add address=35.247.0.0/17 disabled=no list=LIST_IPv4_Out_GFW_Bonding comment="Out_GFW_Bonding_IPv4_List:Blizzard.Wow.US"
+add address=64.224.24.0/21 disabled=no list=LIST_IPv4_Out_GFW_Bonding comment="Out_GFW_Bonding_IPv4_List:Blizzard.Wow.US"
 
 add address=5.42.168.0/21 disabled=no list=LIST_IPv4_Out_GFW_Bonding comment="Out_GFW_Bonding_IPv4_List:Blizzard.Wow.US"
 add address=5.42.176.0/20 disabled=no list=LIST_IPv4_Out_GFW_Bonding comment="Out_GFW_Bonding_IPv4_List:Blizzard.Wow.US"
