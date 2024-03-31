@@ -1,4 +1,4 @@
-/ip firewall address-list remove [/ip firewall address-list find comment="Local_Out_GFW_IPv4_List:Domain]
+/ip firewall address-list remove [/ip firewall address-list find comment="Local_Out_GFW_IPv4_List:Domain"]
 /ip firewall address-list
 
 # Add mikrotik.com to LIST_IPv4_Local_Out_GFW
