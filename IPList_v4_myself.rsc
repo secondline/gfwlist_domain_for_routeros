@@ -1,10 +1,10 @@
-/ip firewall address-list remove [/ip firewall address-list find comment="Out_GFW_IPv4_List:Domain"]
+/ip firewall address-list remove [/ip firewall address-list find comment="Local_Out_GFW_IPv4_List:Domain]
 /ip firewall address-list
 
-# Add mikrotik.com to Out_GFW_IPv4_List
-add address="mikrotik.com" disabled=no list=LIST_IPv4_Out_GFW comment="Out_GFW_IPv4_List:Domain"
-# Add upgrade.mikrotik.com to Out_GFW_IPv4_List
-add address="upgrade.mikrotik.com" disabled=no list=LIST_IPv4_Out_GFW comment="Out_GFW_IPv4_List:Domain"
+# Add mikrotik.com to LIST_IPv4_Local_Out_GFW
+add address="mikrotik.com" disabled=no list=LIST_IPv4_Local_Out_GFW comment="Local_Out_GFW_IPv4_List:Domain"
+# Add upgrade.mikrotik.com to LIST_IPv4_Local_Out_GFW
+add address="upgrade.mikrotik.com" disabled=no list=LIST_IPv4_Local_Out_GFW comment="Local_Out_GFW_IPv4_List:Domain"
 
 /ip firewall address-list remove [/ip firewall address-list find comment="Out_GFW_No_IPv4_List:IP"]
 /ip firewall address-list
