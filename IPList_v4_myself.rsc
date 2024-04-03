@@ -14,6 +14,7 @@ add address="google.com" disabled=no list=LIST_IPv4_Out_GFW comment="Out_GFW_IPv
 add address="translate.google.com" disabled=no list=LIST_IPv4_Out_GFW comment="Out_GFW_IPv4_List:Domain"
 add address="mail.google.com" disabled=no list=LIST_IPv4_Out_GFW comment="Out_GFW_IPv4_List:Domain"
 add address="drive.google.com" disabled=no list=LIST_IPv4_Out_GFW comment="Out_GFW_IPv4_List:Domain"
+add address="docs.google.com" disabled=no list=LIST_IPv4_Out_GFW comment="Out_GFW_IPv4_List:Domain"
 
 /ip firewall address-list remove [/ip firewall address-list find comment="Out_GFW_No_IPv4_List:IP"]
 /ip firewall address-list
