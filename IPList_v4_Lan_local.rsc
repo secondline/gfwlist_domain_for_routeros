@@ -16,3 +16,6 @@ add address="192.168.0.0/17" disabled=no list=List_IPv4_Work.132.Forbidden.Netwo
 
 add address="192.168.128.0/22" disabled=no list=List_IPv4_Work.133.Forbidden.Network comment="IPv4_LAN_Forbidden.Network"
 add address="192.168.0.0/17" disabled=no list=List_IPv4_Work.133.Forbidden.Network comment="IPv4_LAN_Forbidden.Network"
+
+add address="192.168.128.0/22" disabled=no list=List_IPv4_Work.134.Forbidden.Network comment="IPv4_LAN_Forbidden.Network"
+add address="192.168.0.0/17" disabled=no list=List_IPv4_Work.134.Forbidden.Network comment="IPv4_LAN_Forbidden.Network"
