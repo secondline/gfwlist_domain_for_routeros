@@ -10,3 +10,15 @@ add address=ff00::/8 disabled=no list=LIST_IPv6_China comment="Out_China_IPv6_Li
 
 # Add checkipv6.synology.com to Out_China_IPv6_List
 add address="checkipv6.synology.com" disabled=no list=LIST_IPv6_China comment="Out_China_IPv6_List:Domain"
+
+/ipv6 firewall address-list remove [/ipv6 firewall address-list find list=LIST_IPv6_Home.Dx_Fiber]
+/ipv6 firewall address-list
+add address="hdd08b0d2bp.sn.mynetname.net" disabled=no list=LIST_IPv6_Home.Dx_Fiber
+
+/ipv6 firewall address-list remove [/ipv6 firewall address-list find list=LIST_IPv6_Office.Dx_Fiber]
+/ipv6 firewall address-list
+add address="d8590efe3f10.sn.mynetname.net" disabled=no list=LIST_IPv6_Office.Dx_Fiber
+
+/ipv6 firewall address-list remove [/ipv6 firewall address-list find list=LIST_IPv6_Work.Dx_ADSL]
+/ipv6 firewall address-list
+add address="33b6025716f6.sn.mynetname.net" disabled=no list=LIST_IPv6_Work.Dx_ADSL
