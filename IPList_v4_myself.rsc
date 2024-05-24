@@ -6,15 +6,15 @@ add address="mikrotik.com" disabled=no list=LIST_IPv4_Local_Out_GFW comment="Loc
 # Add upgrade.mikrotik.com to LIST_IPv4_Local_Out_GFW
 add address="upgrade.mikrotik.com" disabled=no list=LIST_IPv4_Local_Out_GFW comment="Local_Out_GFW_IPv4_List:Domain"
 
-/ip firewall address-list remove [/ip firewall address-list find comment="Out_GFW_IPv4_List:Domain"]
+/ip firewall address-list remove [/ip firewall address-list find comment="Force_Out_GFW_IPv4_List:Domain"]
 /ip firewall address-list
-# Add www.google.com to Out_GFW_IPv4_List
-add address="www.google.com" disabled=no list=LIST_IPv4_Out_GFW comment="Out_GFW_IPv4_List:Domain"
-add address="google.com" disabled=no list=LIST_IPv4_Out_GFW comment="Out_GFW_IPv4_List:Domain"
-add address="translate.google.com" disabled=no list=LIST_IPv4_Out_GFW comment="Out_GFW_IPv4_List:Domain"
-add address="mail.google.com" disabled=no list=LIST_IPv4_Out_GFW comment="Out_GFW_IPv4_List:Domain"
-add address="drive.google.com" disabled=no list=LIST_IPv4_Out_GFW comment="Out_GFW_IPv4_List:Domain"
-add address="docs.google.com" disabled=no list=LIST_IPv4_Out_GFW comment="Out_GFW_IPv4_List:Domain"
+# Add www.google.com to Force_Out_GFW_IPv4_List
+add address="www.google.com" disabled=no list=LIST_IPv4_Force_Out_GFW comment="Force_Out_GFW_IPv4_List:Domain"
+add address="google.com" disabled=no list=LIST_IPv4_Force_Out_GFW comment="Force_Out_GFW_IPv4_List:Domain"
+add address="translate.google.com" disabled=no list=LIST_IPv4_Force_Out_GFW comment="Force_Out_GFW_IPv4_List:Domain"
+add address="mail.google.com" disabled=no list=LIST_IPv4_Force_Out_GFW comment="Force_Out_GFW_IPv4_List:Domain"
+add address="drive.google.com" disabled=no list=LIST_IPv4_Force_Out_GFW comment="Force_Out_GFW_IPv4_List:Domain"
+add address="docs.google.com" disabled=no list=LIST_IPv4_Force_Out_GFW comment="Force_Out_GFW_IPv4_List:Domain"
 
 /ip firewall address-list remove [/ip firewall address-list find comment="Out_China_IPv4_List:IP"]
 /ip firewall address-list
