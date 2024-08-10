@@ -36,7 +36,6 @@ add address=142.93.81.166 disabled=no list=LIST_IPv4_Direct_Connect comment="Dir
 add address=159.89.129.146 disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:IP"
 add address=159.65.77.153 disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:IP"
 add address=159.89.142.52 disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:IP"
-add address=64.124.13.145 disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:IP"
 
 /ip firewall address-list remove [/ip firewall address-list find comment="Direct_Connect_IPv4_List:Domain"]
 /ip firewall address-list
