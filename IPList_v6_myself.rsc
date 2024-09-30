@@ -10,4 +10,3 @@ add address=ff00::/8 disabled=no list=LIST_IPv6_Direct_Connect comment="Direct_C
 
 # Add checkipv6.synology.com to Direct_Connect_IPv6_List
 add address="checkipv6.synology.com" disabled=no list=LIST_IPv6_Direct_Connect comment="Direct_Connect_IPv6_List:Domain"
-add address="ddns-checkipv6.quickconnect.to" disabled=no list=LIST_IPv6_Direct_Connect comment="Direct_Connect_IPv6_List:Domain"
