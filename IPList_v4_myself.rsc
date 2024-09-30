@@ -43,8 +43,8 @@ add address=159.89.142.52 disabled=no list=LIST_IPv4_Direct_Connect comment="Dir
 # Add checkip.synology.com to Direct_Connect_IPv4_List
 add address="checkip.synology.com" disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:Domain"
 add address="ddns.synology.com" disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:Domain"
-add address="account.synology.com" disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:Domain"
-add address="checkip.dyndns.org" disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:Domain"
+#add address="account.synology.com" disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:Domain"
+#add address="checkip.dyndns.org" disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:Domain"
 
 #add address=bbs.et8.net disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:Domain"
 ##add address=nvidia.com disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:Domain"
