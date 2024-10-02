@@ -12,14 +12,18 @@ add regexp="(.*\\.)sn\\.mynetname\\.net\$" type=FWD forward-to=223.5.5.5 ttl=360
 /ip dns static
 add regexp="(.*\\.)checkip\\.synology\\.com\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Checkip.synology.com"
 add regexp="(.*\\.)checkip\\.synology\\.com\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Checkip.synology.com"
+
+add regexp="(.*\\.)checkipv6\\.synology\\.com\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Checkipv6.synology.com"
+add regexp="(.*\\.)checkipv6\\.synology\\.com\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Checkipv6.synology.com"
+
 #add regexp="(.*\\.)account\\.synology\\.com\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Checkip.synology.com"
 #add regexp="(.*\\.)account\\.synology\\.com\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Checkip.synology.com"
+
 add regexp="(.*\\.)ddns\\.synology\\.com\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Checkip.synology.com"
 add regexp="(.*\\.)ddns\\.synology\\.com\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Checkip.synology.com"
+
 add regexp="(.*\\.)checkip\\.dyndns\\.org\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Checkip.synology.com"
 add regexp="(.*\\.)checkip\\.dyndns\\.org\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Checkip.synology.com"
-add regexp="(.*\\.)checkipv6\\.synology\\.com\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Checkip.synology.com"
-add regexp="(.*\\.)checkipv6\\.synology\\.com\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Checkip.synology.com"
 
 /ip dns static remove [/ip dns static find comment="CNListDomain:Checkipv6.synology.com"]
 /ip dns static
