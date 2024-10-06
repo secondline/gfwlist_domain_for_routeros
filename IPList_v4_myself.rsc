@@ -41,9 +41,9 @@ add address=17.0.0.0/8 disabled=no list=LIST_IPv4_Direct_Connect comment="Direct
 /ip firewall address-list
 
 # Add checkip.synology.com to Direct_Connect_IPv4_List
-add address="checkip.synology.com" disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:Domain"
-add address="ddns.synology.com" disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:Domain"
 add address="account.synology.com" disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:Domain"
+add address="ddns.synology.com" disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:Domain"
+add address="checkip.synology.com" disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:Domain"
 add address="checkip.dyndns.org" disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:Domain"
 
 #add address=bbs.et8.net disabled=no list=LIST_IPv4_Direct_Connect comment="Direct_Connect_IPv4_List:Domain"
