@@ -31,10 +31,10 @@ add regexp="(.*\\.)sn\\.mynetname\\.net\$" type=FWD forward-to=223.5.5.5 ttl=360
 
 /ip dns static remove [/ip dns static find comment="CNListDomain:Doh.DNS"]
 /ip dns static
-add regexp="(^|(.*\\.))alidns\\.com\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Doh.DNS"
 add regexp="(^|(.*\\.))alidns\\.com\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Doh.DNS"
-add regexp="(^|(.*\\.))aliyun\\.com\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Doh.DNS"
+add regexp="(^|(.*\\.))alidns\\.com\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Doh.DNS"
 add regexp="(^|(.*\\.))aliyun\\.com\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Doh.DNS"
+add regexp="(^|(.*\\.))aliyun\\.com\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Doh.DNS"
 add regexp="(^|(.*\\.))doh\\.pub\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Doh.DNS"
 add regexp="(^|(.*\\.))doh\\.pub\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Doh.DNS"
 add regexp="(^|(.*\\.))tencent\\.com\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Doh.DNS"
