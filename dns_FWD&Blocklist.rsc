@@ -3,10 +3,10 @@
 
 /ip dns static remove [/ip dns static find comment="CNListDomain:Cloud.Mikrotik.Com"]
 /ip dns static
-add regexp="(^|(.*\\.))cloud[0-9]?\\.mikrotik\\.com\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Cloud.Mikrotik.Com"
-add regexp="(^|(.*\\.))cloud[0-9]?\\.mikrotik\\.com\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Cloud.Mikrotik.Com"
-add regexp="(.*\\.)sn\\.mynetname\\.net\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Cloud.Mikrotik.Com"
-add regexp="(.*\\.)sn\\.mynetname\\.net\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Cloud.Mikrotik.Com"
+add regexp="(^|(.*\\.))cloud[0-9]?\\.mikrotik\\.com\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Cloud.Mikrotik.Com" disabled=yes
+add regexp="(^|(.*\\.))cloud[0-9]?\\.mikrotik\\.com\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Cloud.Mikrotik.Com" disabled=yes
+add regexp="(.*\\.)sn\\.mynetname\\.net\$" type=FWD forward-to=119.29.29.29 ttl=3600s comment="CNListDomain:Cloud.Mikrotik.Com" disabled=yes
+add regexp="(.*\\.)sn\\.mynetname\\.net\$" type=FWD forward-to=223.5.5.5 ttl=3600s comment="CNListDomain:Cloud.Mikrotik.Com" disabled=yes
 
 /ip dns static remove [/ip dns static find comment="CNListDomain:Checkip.synology.com"]
 /ip dns static
