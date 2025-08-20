@@ -8,13 +8,8 @@ add address="upgrade.mikrotik.com" disabled=no list=LIST_IPv4_Local_Out_GFW comm
 add address="cloud.mikrotik.com" disabled=no list=LIST_IPv4_Local_Out_GFW comment="Local_Out_GFW_IPv4_List:Domain"
 add address="cloud1.mikrotik.com" disabled=no list=LIST_IPv4_Local_Out_GFW comment="Local_Out_GFW_IPv4_List:Domain"
 add address="cloud2.mikrotik.com" disabled=no list=LIST_IPv4_Local_Out_GFW comment="Local_Out_GFW_IPv4_List:Domain"
-add address="cloud3.mikrotik.com" disabled=no list=LIST_IPv4_Local_Out_GFW comment="Local_Out_GFW_IPv4_List:Domain"
-add address="cloud4.mikrotik.com" disabled=no list=LIST_IPv4_Local_Out_GFW comment="Local_Out_GFW_IPv4_List:Domain"
-add address="cloud5.mikrotik.com" disabled=no list=LIST_IPv4_Local_Out_GFW comment="Local_Out_GFW_IPv4_List:Domain"
-add address="cloud6.mikrotik.com" disabled=no list=LIST_IPv4_Local_Out_GFW comment="Local_Out_GFW_IPv4_List:Domain"
-add address="cloud7.mikrotik.com" disabled=no list=LIST_IPv4_Local_Out_GFW comment="Local_Out_GFW_IPv4_List:Domain"
-add address="cloud8.mikrotik.com" disabled=no list=LIST_IPv4_Local_Out_GFW comment="Local_Out_GFW_IPv4_List:Domain"
-add address="cloud9.mikrotik.com" disabled=no list=LIST_IPv4_Local_Out_GFW comment="Local_Out_GFW_IPv4_List:Domain"
+
+add address="api.dynu.com" disabled=no list=LIST_IPv4_Local_Out_GFW comment="Local_Out_GFW_IPv4_List:Domain"
 
 /ip firewall address-list remove [/ip firewall address-list find comment="Out_GFW_Priority_IPv4_List:Domain"]
 /ip firewall address-list
